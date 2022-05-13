@@ -1,2 +1,14 @@
 # Quick Start
--  Stuff was here now its not. But also I can't get remotes working.
+---
+## Exploitation methods
+- Heap exploitation: [[Heap Exploitation]]
+- Standard exploitation: 
+
+
+## Tools
+
+
+## Resources
+- [Pwndbg cheatsheet](https://cheatography.com/cactuarnation/cheat-sheets/gdb-and-pwndbg/)
+- [[Pwndbg and Pwntools]] field journal
+- 
