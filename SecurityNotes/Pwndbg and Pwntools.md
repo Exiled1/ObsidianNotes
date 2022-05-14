@@ -1,3 +1,5 @@
+tags: #pwndbg #pwntools
+
 # Tips and tricks
 ---
 | Trick                      | Description                                                        |
@@ -8,3 +10,4 @@
 | `distance [addr1] [addr2]` | Returns the distance between 2 addresses                           |
 
 ---
+
