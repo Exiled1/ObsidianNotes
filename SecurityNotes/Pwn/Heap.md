@@ -23,4 +23,3 @@ So this index is to help me keep track of everything I've learned. As well as li
 
 ### Libc specific stuff
 - Libc quirks and table of contents for stuff I've learned about specific ones: [[libc and their quirks]]
-- Glibc 2.33 and things I've learned through challenges: [[libc 2.33]]
