@@ -172,3 +172,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+## Relevant links
+- How2heap glibc 2.33 tcache poisoning [link](https://github.com/shellphish/how2heap/blob/master/glibc_2.33/tcache_poisoning.c) 
+- 
