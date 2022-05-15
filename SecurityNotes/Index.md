@@ -1,8 +1,7 @@
 # Quick Start
 ---
 ## Exploitation methods / Pwn
-- 
-- Heap exploitation: [[Heap Exploitation]]
+- Heap Index for stuff I've learned: [[Heap]]
 - Stack exploitation:  [[Stack Exploitation]]
 - 
 
@@ -11,9 +10,7 @@
 - 
 
 ## Reversing
-- Link to reversing index [[Reversing]]
-- Working with weird architectures [[Notes on reversing random architectures]]
-- 
+- Link to reversing index [[Reversing]] (This also contains information on tooling like pwndbg and pwntools)
 
 ## Tools
 - **Z3**, a constraint solver [link](https://github.com/Z3Prover/z3)
@@ -25,5 +22,4 @@
 
 ## Resources
 - [Pwndbg cheatsheet](https://cheatography.com/cactuarnation/cheat-sheets/gdb-and-pwndbg/)
-- [[Pwndbg and Pwntools]] field journal
 

@@ -8,3 +8,5 @@
 ```
 *((current_note << 2) + 0x804a050) = malloc(bytes: 8)
 ```
+
+

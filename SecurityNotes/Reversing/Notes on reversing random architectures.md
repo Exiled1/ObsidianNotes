@@ -2,6 +2,10 @@
 ## Working with foreign architectures
 [Link](https://ropemporium.com/guide.html) to where I'm getting the info
 
+## Patching binaries
+- `patchelf --set-interpreter ./ld-2.31.so ./[binary_name]`  will patch it. Then you can `LD_PRELOAD` the linker and libc in. You should follow this in case **pwninit** doesn't work. (Which always sucks if it doesn't)
+- `p = process([exe.path], env={'LD_PRELOAD':'libc.so.6'})` should `LD_PRELOAD` for you within pwntools.
+
 #arm
 ## ARMv5
 Running programs compiled for foreign architectures is much easier than it used to be, this example uses **qemu-user** to achieve this. The setup is simple, and only involves installing 2 packages and creating a symlink:

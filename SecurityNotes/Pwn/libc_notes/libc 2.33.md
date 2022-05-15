@@ -52,3 +52,11 @@ All allocated chunks in the heap are aligned to a known fixed offset which is us
 
 ### Safelinking Issues
 Just like Safe-Unlinking (for double-linked lists), this protection relies on the fact that the attacker **doesn’t** know what **legitimate heap pointers** look like. In the double-linked list scenario, an attacker that can forge a memory struct, and knows what a valid heap pointer looks like, can successfully forge a valid `FD`/`BK` pair of pointers that won’t trigger an Arbitrary-Write primitive, but allows a chunk at an attacker-controlled address.
+### My first heap challenge
+**Tricks I used for this challenge (habyheap)**
+- Overwrite null byte to get proper leak
+- Get two unsorted bin chunks - first one leaks libc, second one leaks heap
+- Use heap leak to defeat safe linking (2.33 libc)
+
+Writeup for habyheap here: [[habyheap writeup]]
+
