@@ -1,6 +1,7 @@
 # Quick Start
 ---
-## Exploitation methods
+## Exploitation methods / Pwn
+- 
 - Heap exploitation: [[Heap Exploitation]]
 - Stack exploitation:  [[Stack Exploitation]]
 - 
@@ -10,6 +11,7 @@
 - 
 
 ## Reversing
+- Link to reversing index [[Reversing]]
 - Working with weird architectures [[Notes on reversing random architectures]]
 - 
 
