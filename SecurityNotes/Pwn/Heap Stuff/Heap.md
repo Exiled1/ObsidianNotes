@@ -9,7 +9,7 @@ So this index is to help me keep track of everything I've learned. As well as li
 - Note's on exploiting the heap: [[Heap Exploitation]]
 
 ## Stuff I've learned
-- A single tcache bin contains at **most 7**  chunks by default. (It's just a feature in GLIBC)
+- A single tcache bin contains at **most 7** chunks by default. (It's just a feature in GLIBC)
 - There exists a thing called the **wilderness** which is a massive block of free memory.
 - **Coalescing** is the act of merging two free chunks next to each other.
 	- You can prevent this by having an allocated block of memory between two freed blocks of memory.
