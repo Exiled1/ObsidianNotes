@@ -8,7 +8,7 @@
 - **How to beat it:**
 	- Essentially, what safelinking does is it adds a random mask to pointers (that takes advantage of ASLR) which **signs** the pointers in a singly linked list. 
 	- The actual protection itself follows really stupid logic, that being:
-		- `Mask := (L >> PAGE_SHIFT)` 
+		- `:= (L >> PAGE_SHIFT)` 
 		- Where `L` is the single-linked list pointer.
 	- We get around it by obfuscating our pointer with an offset from heap base (I believe it's heap base) so that when it goes into the translation/reveal step we have the following calculation:
 		- `original_ptr = target_ptr ^ ((secondary_leak + offset) >> 12)` or whatever the page shift value is here. Essentially this is done so that we XOR the mask away to recover the target/original pointer.
