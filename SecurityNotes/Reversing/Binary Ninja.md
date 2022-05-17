@@ -9,4 +9,13 @@
 *((current_note << 2) + 0x804a050) = malloc(bytes: 8)
 ```
 
+---
+## Custom demangling (probably useful for Rust rev)
+```python
+
+import subprocess
+for func in bv.functions:
+    if func.name.startswith("__T") or func.name.startswith("_T"):
+        func.name = subprocess.check_output(["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swift-demangle", "-compact", func.name])
+```
 
