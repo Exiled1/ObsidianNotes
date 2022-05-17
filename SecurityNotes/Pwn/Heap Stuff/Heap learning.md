@@ -18,3 +18,5 @@ Turns out that there are multiple memory allocators that exist:
 
 **Threading:** This act of maintaining separate heap and free-list data structures for each thread is called **per thread arena**.
 
+
+
