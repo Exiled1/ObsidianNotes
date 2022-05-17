@@ -18,5 +18,71 @@ Turns out that there are multiple memory allocators that exist:
 
 **Threading:** This act of maintaining separate heap and free-list data structures for each thread is called **per thread arena**.
 
+--- 
 
+**Incredibly useful link to bins and chunks**: [link](https://heap-exploitation.dhavalkapil.com/diving_into_glibc_heap/bins_chunks#fast-bins)
 
+## Bins and Chunks:
+
+### Fast bins
+There are **10** fast bins. Each of these bins contains a **single linked** list. Addition and deletion happen in a LIFO manner from the front of the list.
+
+No two contiguous free fast chunks coalesce together. (Note, need to figure out what this means) 
+
+### Unsorted bin
+There is only **1** unsorted bin. Small and large chunks, when freed, end up in this bin. The primary purpose of this bin is to act as a cache layer (kind of) to speed up allocation and deallocation requests.
+
+### Small bins
+There are **62** small bins. Small bins are faster than large bins but slower than fast bins. Each bin maintains a **doubly-linked** list. Insertions happen at the '**HEAD**' while removals happen at the '**TAIL**' (in a FIFO manner).
+
+Like fast bins, each bin has chunks of the same size. The 62 bins have sizes: 16, 24, … , 504 bytes.
+
+While freeing, small chunks may be coalesced together before ending up in unsorted bins.
+
+### Large bins
+There are **63** large bins. Each bin maintains a doubly-linked list. A particular large bin has chunks of different sizes, sorted in decreasing order (i.e. largest chunk at the 'HEAD' and smallest chunk at the 'TAIL'). Insertions and removals happen at any position within the list.
+
+The first **32** bins contain chunks which are **64** bytes apart:
+
+1st bin: 512 - 568 bytes 
+2nd bin: 576 - 632 bytes
+etc.
+```
+
+No. of Bins       Spacing between bins
+
+64 bins of size       8  [ Small bins]
+32 bins of size      64  [ Large bins]
+16 bins of size     512  [ Large bins]
+8 bins of size     4096  [ ..        ]
+4 bins of size    32768
+2 bins of size   262144
+1 bin  of size what's left
+```
+
+Like small chunks, while freeing, large chunks may be coalesced together before ending up in unsorted bins.
+
+There are **two special types** of chunks which are **not** part of any bin.
+
+### Top chunk
+
+It is the chunk which borders the top of an arena. While servicing 'malloc' requests, it is used as the last resort. If still more size is required, it can grow using the `sbrk` system call. The `PREV_INUSE` flag is always set for the top chunk.
+
+### Last remainder chunk
+
+It is the chunk obtained from the last split. Sometimes, when exact size chunks are not available, bigger chunks are split into two. One part is returned to the user whereas the other becomes the last remainder chunk.
+
+## Recycling memory with bins
+
+There are 5 type of bins: 62 small bins, 63 large bins, 1 unsorted bin, 10 fast bins and 64 tcache bins per thread.
+
+The small, large, and unsorted bins are the oldest type of bin and are used to implement what I’ll refer to here as the basic recycling strategy of the heap. The fast bins and tcache bins are optimizations that layer on top of these.
+
+Confusingly, the small, large, and unsorted bins all live together in the same array in the heap manager’s source code. Index 0 is unused, 1 is the unsorted bin, bins 2-64 are small bins and bins 65-127 are large bins.
+
+```
+bin[0] = Not Used
+bin[1] = Unsorted bin
+bin[2] through bin[63] = small bin
+bin[64] through bin[126] = large bin
+```
