@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "300c3bf46a808889",
+    "type": "split",
+    "children": [
+      {
+        "id": "45f8ab6888b782b1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Good guitar songs to learn.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0e4081e435e5bbc7",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b4fd3519f293fe6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8a250cee5f506deb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "2cbc0cea4580d3eb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9b1d0ad5a6f4684a",
+    "type": "split",
+    "children": [
+      {
+        "id": "06627bdd7d965553",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5ab153b70547d02e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Good guitar songs to learn.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "45f8ab6888b782b1",
+  "lastOpenFiles": [
+    "Good guitar songs to learn.md"
+  ]
+}
