@@ -19,7 +19,7 @@ Also, make sure that you haven't installed virtualenv in anything more than 1 ou
 THEN you have to place these environment variables in your `.zshrc` or `.bashrc`
 
 ```
-export WORKON_HOME=$HOME/.virtualenvs                                                                                   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.9                                                                      export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv                                                                   source /home/exiled/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs                                                                                   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.9   # Or 3.10, whichever is supported                                                                   export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv                                                                   source /home/exiled/.local/bin/virtualenvwrapper.sh
 ```
 
 THEN you can test it out with
