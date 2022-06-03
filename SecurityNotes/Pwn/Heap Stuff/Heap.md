@@ -25,3 +25,6 @@ So this index is to help me keep track of everything I've learned. As well as li
 
 ### Libc specific stuff
 - Libc quirks and table of contents for stuff I've learned about specific ones: [[libc and their quirks]]
+
+## Heap Security Checks
+- Here's a list of [[Heap security checks]]! This should give a slight overview over possible attacks against different libc versions.
