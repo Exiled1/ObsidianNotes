@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "tag:Heap",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "tag: pwntools",
+      "color": {
+        "a": 1,
+        "rgb": 3246123
+      }
+    },
+    {
+      "query": "tag: pwndbg",
+      "color": {
+        "a": 1,
+        "rgb": 4484037
+      }
+    },
+    {
+      "query": "tag: YJ",
+      "color": {
+        "a": 1,
+        "rgb": 14382336
+      }
+    },
+    {
+      "query": "tag: libc",
+      "color": {
+        "a": 1,
+        "rgb": 16250
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": true,
+  "textFadeMultiplier": -3,
+  "nodeSizeMultiplier": 2.00157372339036,
+  "lineSizeMultiplier": 5,
+  "collapse-forces": true,
+  "centerStrength": 0.162465717643986,
+  "repelStrength": 13.4373775630142,
+  "linkStrength": 1,
+  "linkDistance": 260,
+  "scale": 0.2588386562181652,
+  "close": false
+}

@@ -1,0 +1,122 @@
+{
+  "main": {
+    "id": "164ba11f8cff160c",
+    "type": "split",
+    "children": [
+      {
+        "id": "7d8111c98376aad8",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "04bc6c6cd3109921",
+    "type": "split",
+    "children": [
+      {
+        "id": "f88ae45570c5cd3b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9e521dc39b7b098b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "bdf081959ded97c0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#YJ",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1c36eeef73955bb3",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 252.5068016052246
+  },
+  "right": {
+    "id": "3cf4e3a5efd81bf8",
+    "type": "split",
+    "children": [
+      {
+        "id": "b34ee18f6af9a639",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b1fd72f6f2b7ff4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1c9340a37abcf7e7",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "744acd0ef531966c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 181.1665802001953
+  },
+  "active": "7d8111c98376aad8",
+  "lastOpenFiles": [
+    "Tooling/mkvirtualenv.md",
+    "Tooling/Installing angr.md",
+    "Random Stuff/Random CPython.md",
+    "Pwn/Heap Stuff/Heap security checks.md",
+    "Pwn/Heap Stuff/Heap.md",
+    "Pwn/Heap Stuff/Heap Exploitation.md",
+    "Reversing/Reversing.md",
+    "Index.md",
+    "writeups/VolgaCTF2022/habyheap writeup.md",
+    "Pwn/Heap Stuff/High Level Heap exploitation Overview.md"
+  ]
+}
