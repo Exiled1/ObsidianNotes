@@ -14,39 +14,59 @@ Turns out that there are multiple memory allocators that exist:
 >- libumem – Solaris
 >- …etc.
 
-**System calls:** Malloc internally calls the `brk` or `mmap` syscalls.
+---
+(This is incredibly useful as a refresher, use obsidians table of contents to quickly traverse it.)
 
-**Threading:** This act of maintaining separate heap and free-list data structures for each thread is called **per thread arena**.
+## Useful terms
+**Arena**
+- A structure that is shared among one or more threads which contains references to one or more heaps, as well as linked lists of chunks within those heaps which are "free". Threads assigned to each arena will allocate memory from that arena's free lists.
 
---- 
+**Heap**
+- A contiguous region of memory that is subdivided into chunks to be allocated. Each heap belongs to exactly one arena.
+
+**Chunk**
+- A small range of memory that can be allocated (owned by the application), freed (owned by glibc), or combined with adjacent chunks into larger ranges. Note that a chunk is a wrapper around the block of memory that is given to the application. Each chunk exists in one heap and belongs to one arena.
+
+**Bin**
+- Within every arena, chunks are marked as either **in use**, or they're marked as **free**.
+- Freed chunks are stored in various **lists** based on their size, and history in order to best find chunks that can service an allocation request. These "lists" are called **bins!**. 
+- Below you'll find an overview for each type of bin!
+
+**Coalesce**
+- When two chunks of memory (except fast bin chunks) that are free are adjacent to each other, they're combined into a single free chunk.
+
+[material citation](https://sourceware.org/glibc/wiki/MallocInternals)
 
 **Incredibly useful link to bins and chunks**: [link](https://heap-exploitation.dhavalkapil.com/diving_into_glibc_heap/bins_chunks#fast-bins)
 
 ## Bins and Chunks:
 
 ### Fast bins
-There are **10** fast bins. Each of these bins contains a **single linked** list. Addition and deletion happen in a LIFO manner from the front of the list.
-
-No two contiguous free fast chunks coalesce together. (Note, need to figure out what this means) 
+- Smaller chunks are stored in **size-specific** bins. Chunks that are added to a fast bin are not combined with adjacent chunks (see **coalesce**).
+- Chunks stored in fastbins could be moved to another bin if the allocator deems it necessary.
+- Fastbin chunks are stored in a **singly linked list**. Addition and deletion happen in a LIFO manner from the front of the list.
+- There are **10** fast bins.
+- Refer to [[Fast Bin]] for more specific information.
 
 ### Unsorted bin
-There is only **1** unsorted bin. Small and large chunks, when freed, end up in this bin. The primary purpose of this bin is to act as a cache layer (kind of) to speed up allocation and deallocation requests.
+- There is only **1** unsorted bin. Small and large chunks, when freed, end up in this bin.
+- The primary purpose of this bin is to act as a cache layer (kind of) to speed up allocation and deallocation requests.
 
 ### Small bins
-There are **62** small bins. Small bins are faster than large bins but slower than fast bins. Each bin maintains a **doubly-linked** list. Insertions happen at the '**HEAD**' while removals happen at the '**TAIL**' (in a FIFO manner).
+- There are **62** small bins. Small bins are faster than large bins but slower than fast bins. Each bin maintains a **doubly-linked** list. Insertions happen at the '**HEAD**' while removals happen at the '**TAIL**' (in a FIFO manner).
 
-Like fast bins, each bin has chunks of the same size. The 62 bins have sizes: 16, 24, … , 504 bytes.
+- Like fast bins, each bin has chunks of the same size. The 62 bins have sizes: 16, 24, … , 504 bytes.
 
-While freeing, small chunks may be coalesced together before ending up in unsorted bins.
+- While freeing, small chunks may be coalesced together before ending up in unsorted bins.
 
 ### Large bins
-There are **63** large bins. Each bin maintains a doubly-linked list. A particular large bin has chunks of different sizes, sorted in decreasing order (i.e. largest chunk at the 'HEAD' and smallest chunk at the 'TAIL'). Insertions and removals happen at any position within the list.
+- There are **63** large bins. Each bin maintains a doubly-linked list. A particular large bin has chunks of different sizes, sorted in decreasing order (i.e. largest chunk at the 'HEAD' and smallest chunk at the 'TAIL'). Insertions and removals happen at any position within the list.
 
-The first **32** bins contain chunks which are **64** bytes apart:
+- The first **32** bins contain chunks which are **64** bytes apart:
+	- 1st bin: 512 - 568 bytes 
+	- 2nd bin: 576 - 632 bytes
+	- etc.
 
-1st bin: 512 - 568 bytes 
-2nd bin: 576 - 632 bytes
-etc.
 ```
 
 No. of Bins       Spacing between bins
@@ -60,7 +80,10 @@ No. of Bins       Spacing between bins
 1 bin  of size what's left
 ```
 
-Like small chunks, while freeing, large chunks may be coalesced together before ending up in unsorted bins.
+- Like small chunks, while freeing, large chunks may be coalesced together before ending up in unsorted bins.
+
+---
+## Special chunk types
 
 There are **two special types** of chunks which are **not** part of any bin.
 
@@ -86,3 +109,7 @@ bin[1] = Unsorted bin
 bin[2] through bin[63] = small bin
 bin[64] through bin[126] = large bin
 ```
+
+---
+
+
