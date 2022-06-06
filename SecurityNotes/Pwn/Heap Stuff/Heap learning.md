@@ -26,14 +26,17 @@ Turns out that there are multiple memory allocators that exist:
 
 **Chunk**
 - A small range of memory that can be allocated (owned by the application), freed (owned by glibc), or combined with adjacent chunks into larger ranges. Note that a chunk is a wrapper around the block of memory that is given to the application. Each chunk exists in one heap and belongs to one arena.
+**Coalesce**
+- When two chunks of memory (except fast bin chunks) that are free are adjacent to each other, they're combined into a single free chunk.
+
+**Tcache**
+- These are called Thread Localized Caches. Otherwise known as **tcaches**
+- You can learn more about the internals of the tcache at the [[TCache Explanation and attacks]] section.
 
 **Bin**
 - Within every arena, chunks are marked as either **in use**, or they're marked as **free**.
 - Freed chunks are stored in various **lists** based on their size, and history in order to best find chunks that can service an allocation request. These "lists" are called **bins!**. 
 - Below you'll find an overview for each type of bin!
-
-**Coalesce**
-- When two chunks of memory (except fast bin chunks) that are free are adjacent to each other, they're combined into a single free chunk.
 
 [material citation](https://sourceware.org/glibc/wiki/MallocInternals)
 
@@ -51,12 +54,13 @@ Turns out that there are multiple memory allocators that exist:
 ### Unsorted bin
 - There is only **1** unsorted bin. Small and large chunks, when freed, end up in this bin.
 - The primary purpose of this bin is to act as a cache layer (kind of) to speed up allocation and deallocation requests.
+- Uses a **circular double linked list** (see **binlist**) to keep track of freed chunks.
+- There's no size restriction with the unsorted bin.
 
 ### Small bins
 - There are **62** small bins. Small bins are faster than large bins but slower than fast bins. Each bin maintains a **doubly-linked** list. Insertions happen at the '**HEAD**' while removals happen at the '**TAIL**' (in a FIFO manner).
-
+- Small bins are composed of chunks that are **8 bytes apart**.
 - Like fast bins, each bin has chunks of the same size. The 62 bins have sizes: 16, 24, … , 504 bytes.
-
 - While freeing, small chunks may be coalesced together before ending up in unsorted bins.
 
 ### Large bins
