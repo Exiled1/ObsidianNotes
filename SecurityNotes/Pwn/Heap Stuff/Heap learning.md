@@ -32,6 +32,8 @@ Turns out that there are multiple memory allocators that exist:
 **Tcache**
 - These are called Thread Localized Caches. Otherwise known as **tcaches**
 - You can learn more about the internals of the tcache at the [[TCache Explanation and attacks]] section.
+- Only introduced in **glibc 2.26** and above.
+- 
 
 **Bin**
 - Within every arena, chunks are marked as either **in use**, or they're marked as **free**.
