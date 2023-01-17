@@ -9,3 +9,7 @@ struct cart {
 	cart+12: cart*, // Next 
 }
 ```
+
+## Regular functions
+
+## Interesting functions:
