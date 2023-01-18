@@ -117,6 +117,7 @@ Delete
 
 Checkout
 * Something weird I noticed was that item.name is on the stack.
+* Also, the asprintf function *might* free its value once it leaves the function.
 
 ```c
 void checkout(void) {
