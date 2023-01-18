@@ -11,5 +11,7 @@ struct cart {
 ```
 
 ## Regular functions
+Create, seems to make a product that goes into cart.
+- Takes a string and char as a parameter, 199 - 399
 
 ## Interesting functions:
