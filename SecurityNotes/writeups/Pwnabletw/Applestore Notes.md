@@ -116,3 +116,29 @@ Delete
 * **bug that causes an infinite loop when the user inputs an item number that does not exist in the cart**
 
 Checkout
+* Something weird I noticed was that item.name is on the stack.
+
+```c
+void checkout(void) {
+  int iVar1;
+  int in_GS_OFFSET;
+  int total;
+  cart_item item;
+  
+  iVar1 = *(int *)(in_GS_OFFSET + 0x14);
+  total = cart();
+  if (total == 0x1c06) {
+    puts("*: iPhone 8 - $1");
+    asprintf(&item.name,"%s","iPhone 8");
+    item.price = 1;
+    insert(&item);
+    total = 0x1c07;
+  }
+  printf("Total: $%d\n",total);
+  puts("Want to checkout? Maybe next time!");
+  if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
+    __stack_chk_fail();
+  }
+  return;
+}
+```
