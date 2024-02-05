@@ -15,3 +15,10 @@
     2.  download the associated debug symbol file (eg.[https://launchpad.net/ubuntu/xenial/amd64/libc6-dbg/2.23-0ubuntu5](https://launchpad.net/ubuntu/xenial/amd64/libc6-dbg/2.23-0ubuntu5))
     3.  merge stripped libc file with debug symbol file using `eu-unstrip` like so: `eu-unstrip <stripped-libc> <symbol-file>`
     4.  now `<symbol-file>` will be your newly redressed libc w/symbols!
+
+%% Begin Waypoint %%
+- [[Binary Ninja]]
+- [[Ghidra]]
+- [[Notes on reversing random architectures]]
+
+%% End Waypoint %%

@@ -1,20 +1,21 @@
 {
   "main": {
-    "id": "5b8eab010271d62e",
+    "id": "ffd59e41aa008a3b",
     "type": "split",
     "children": [
       {
-        "id": "ac435697e2598ab9",
+        "id": "afdab36af5268ded",
         "type": "tabs",
         "children": [
           {
-            "id": "721fcbcabb19a520",
+            "id": "2439779f29295f6c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RandomNotes/RandomNotes/Good guitar songs to learn.md",
+                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
                 "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
@@ -25,15 +26,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b83ca8365ac255e9",
+    "id": "45f74417aa71d6fc",
     "type": "split",
     "children": [
       {
-        "id": "556120f1c0f45cd9",
+        "id": "3dd944aa70942a3a",
         "type": "tabs",
         "children": [
           {
-            "id": "b4de1c1db66d5104",
+            "id": "58a2a19d4d4f9168",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +44,7 @@
             }
           },
           {
-            "id": "b3dd2dd38e1065c7",
+            "id": "3ef8aa51536e5649",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,18 +59,18 @@
             }
           },
           {
-            "id": "1e46c54c1ca9ae11",
+            "id": "3a394cd4f72f4069",
             "type": "leaf",
             "state": {
-              "type": "starred",
+              "type": "bookmarks",
               "state": {}
             }
           },
           {
-            "id": "b3fbd978cd7c9fe2",
+            "id": "a5e0c21c1ccbc886",
             "type": "leaf",
             "state": {
-              "type": "bookmarks",
+              "type": "recent-files",
               "state": {}
             }
           }
@@ -80,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "da24fd24db60cb1f",
+    "id": "6b04088667c1621e",
     "type": "split",
     "children": [
       {
-        "id": "41c8033300833f3b",
+        "id": "7ea48ea140a0d7ff",
         "type": "tabs",
         "children": [
           {
-            "id": "a0fa9247b1837b24",
+            "id": "cc3f5ff1a502057f",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "RandomNotes/RandomNotes/Good guitar songs to learn.md",
+                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,19 +106,19 @@
             }
           },
           {
-            "id": "5a1c010a7de04026",
+            "id": "95cc566cef6251a9",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "RandomNotes/RandomNotes/Good guitar songs to learn.md",
+                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "3ffad7832889f642",
+            "id": "035aff2658c06e61",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -128,32 +129,88 @@
             }
           },
           {
-            "id": "43072335bf8ebc2c",
+            "id": "528c71ca4d61c857",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "RandomNotes/RandomNotes/Good guitar songs to learn.md"
+                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md"
               }
             }
+          },
+          {
+            "id": "ab2052ad43069be0",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "8e5cd17aa8b046e6",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {}
+            }
+          },
+          {
+            "id": "0b4f69f3859f9d23",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "graph:Open graph view": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "omnisearch:Omnisearch": false,
+      "notion-like-tables:Create loom": false
     }
   },
-  "active": "721fcbcabb19a520",
-  "lastOpenFiles": []
+  "active": "2439779f29295f6c",
+  "lastOpenFiles": [
+    "SecurityNotes/Pwn/Pwn.md",
+    "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
+    "SecurityNotes/Pwn/Exploit tooling/Exploit tooling.md",
+    "SecurityNotes/Forensics/Forensics.md",
+    "SecurityNotes/Forensics/Forensic specific tools.md",
+    "SecurityNotes/SecurityNotes.md",
+    "SecurityNotes/writeups/writeups.md",
+    "Index.md",
+    "Pwn/Pwn.md",
+    "Pwn/Exploit tooling/Exploit tooling.md",
+    "Pwn/Heap Stuff/Heap Stuff.md",
+    "Crypto Learning Stuff.md",
+    "writeups/writeups.md",
+    "writeups/VolgaCTF2022/VolgaCTF2022.md",
+    "writeups/Pwnabletw/Pwnabletw.md",
+    "Tooling/Tooling.md",
+    "Reversing/Reversing.md",
+    "Random Stuff/Random Stuff.md",
+    "Pwn/libc_notes/libc_notes.md",
+    "Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
+    "Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
+    "Pwn/Heap Stuff/Heap Exploitation.md",
+    "Pwn/Heap Stuff/Heap Techniques/First Fit.md",
+    "Pwn/Heap Stuff/Heap learning.md",
+    "Forensics/Forensics.md",
+    "Forensics/Forensic specific tools.md",
+    "Index Loom.loom"
+  ]
 }
