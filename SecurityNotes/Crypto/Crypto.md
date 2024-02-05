@@ -1,10 +1,9 @@
-# Heap Internals Overview
+# Crypto Overview
  
 ```ccard
 type: folder_brief_live
 ```
 %% Begin Waypoint %%
-- [[Fast Bin]]
-- [[TCache Explanation and attacks]]
+- [[Crypto Learning Stuff]]
 
 %% End Waypoint %%

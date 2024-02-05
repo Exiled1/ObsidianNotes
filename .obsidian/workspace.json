@@ -6,6 +6,7 @@
       {
         "id": "afdab36af5268ded",
         "type": "tabs",
+        "dimension": 26.845637583892618,
         "children": [
           {
             "id": "2439779f29295f6c",
@@ -13,7 +14,27 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
+                "file": "BinaryNinjaNotes/Binary Ninja/Types Module.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "040b3fdbbb2e3884",
+        "type": "tabs",
+        "dimension": 73.15436241610739,
+        "children": [
+          {
+            "id": "80164095e02c709f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SecurityNotes/Index.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -94,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
+                "file": "SecurityNotes/Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +132,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
+                "file": "SecurityNotes/Index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +155,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md"
+                "file": "SecurityNotes/Index.md"
               }
             }
           },
@@ -163,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -183,34 +204,37 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "2439779f29295f6c",
+  "active": "80164095e02c709f",
   "lastOpenFiles": [
-    "SecurityNotes/Pwn/Pwn.md",
-    "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
-    "SecurityNotes/Pwn/Exploit tooling/Exploit tooling.md",
-    "SecurityNotes/Forensics/Forensics.md",
-    "SecurityNotes/Forensics/Forensic specific tools.md",
-    "SecurityNotes/SecurityNotes.md",
+    "BinaryNinjaNotes/Binary Ninja/Types Module.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Exploitation.md",
+    "BinaryNinjaNotes/Binary Ninja",
+    "BinaryNinjaNotes",
+    "BinaryNinjaNotes/Types Module.md",
+    "Types Module.md",
+    "SecurityNotes/Pwn/libc_notes/libc 2.33.md",
     "SecurityNotes/writeups/writeups.md",
-    "Index.md",
-    "Pwn/Pwn.md",
-    "Pwn/Exploit tooling/Exploit tooling.md",
-    "Pwn/Heap Stuff/Heap Stuff.md",
-    "Crypto Learning Stuff.md",
-    "writeups/writeups.md",
-    "writeups/VolgaCTF2022/VolgaCTF2022.md",
-    "writeups/Pwnabletw/Pwnabletw.md",
-    "Tooling/Tooling.md",
-    "Reversing/Reversing.md",
-    "Random Stuff/Random Stuff.md",
-    "Pwn/libc_notes/libc_notes.md",
-    "Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
-    "Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
-    "Pwn/Heap Stuff/Heap Exploitation.md",
-    "Pwn/Heap Stuff/Heap Techniques/First Fit.md",
-    "Pwn/Heap Stuff/Heap learning.md",
-    "Forensics/Forensics.md",
-    "Forensics/Forensic specific tools.md",
+    "SecurityNotes/Index.md",
+    "SecurityNotes/Tooling/Tooling.md",
+    "SecurityNotes/Reversing/Reversing.md",
+    "SecurityNotes/Random Stuff/Random Stuff.md",
+    "SecurityNotes/Pwn/libc_notes/libc_notes.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Stuff.md",
+    "SecurityNotes/Pwn/Exploit tooling/Exploit tooling.md",
+    "SecurityNotes/Pwn/Pwn.md",
+    "SecurityNotes/Forensics/Forensics.md",
+    "SecurityNotes/Crypto/Crypto.md",
+    "SecurityNotes/SecurityNotes.md",
+    "SecurityNotes/Reversing/Rev tips and tricks.md",
+    "SecurityNotes/Reversing/Redressing a stripped libc.md",
+    "SecurityNotes/Crypto/Crypto Learning Stuff.md",
+    "SecurityNotes/Crypto",
+    "SecurityNotes/Crypto Learning Stuff.md",
+    "SecurityNotes/Reversing/Ghidra.md",
+    "SecurityNotes/Reversing/Binary Ninja.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap.md",
     "Index Loom.loom"
   ]
 }

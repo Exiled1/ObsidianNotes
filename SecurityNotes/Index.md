@@ -1,13 +1,5 @@
 # Quick Start
 ---
-## Exploitation methods / Pwn
-- Heap Index for stuff I've learned: [[Heap]]
-- Stack exploitation:  [[Stack Exploitation]]
-- 
-
-## Forensics
-- Tooling for that [[Forensic specific tools]]
-- 
 
 ## Reversing
 - Link to reversing index [[Reversing]] (This also contains information on tooling like pwndbg and pwntools)

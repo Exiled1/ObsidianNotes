@@ -15,5 +15,6 @@
   "graph-analysis",
   "notion-like-tables",
   "folder-note-plugin",
-  "waypoint"
+  "waypoint",
+  "persistent-graph"
 ]
