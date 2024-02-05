@@ -6,39 +6,13 @@
       {
         "id": "afdab36af5268ded",
         "type": "tabs",
-        "dimension": 26.845637583892618,
         "children": [
           {
             "id": "2439779f29295f6c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BinaryNinjaNotes/Binary Ninja/Types Module.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "040b3fdbbb2e3884",
-        "type": "tabs",
-        "dimension": 73.15436241610739,
-        "children": [
-          {
-            "id": "80164095e02c709f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "SecurityNotes/Index.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -115,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SecurityNotes/Index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SecurityNotes/Index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -154,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "SecurityNotes/Index.md"
-              }
+              "state": {}
             }
           },
           {
@@ -204,9 +174,10 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "80164095e02c709f",
+  "active": "58a2a19d4d4f9168",
   "lastOpenFiles": [
     "BinaryNinjaNotes/Binary Ninja/Types Module.md",
+    "SecurityNotes/Index.md",
     "SecurityNotes/Pwn/Heap Stuff/Heap Exploitation.md",
     "BinaryNinjaNotes/Binary Ninja",
     "BinaryNinjaNotes",
@@ -214,7 +185,6 @@
     "Types Module.md",
     "SecurityNotes/Pwn/libc_notes/libc 2.33.md",
     "SecurityNotes/writeups/writeups.md",
-    "SecurityNotes/Index.md",
     "SecurityNotes/Tooling/Tooling.md",
     "SecurityNotes/Reversing/Reversing.md",
     "SecurityNotes/Random Stuff/Random Stuff.md",

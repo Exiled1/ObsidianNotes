@@ -1,12 +1,12 @@
 {
   "recentFiles": [
     {
-      "basename": "Index",
-      "path": "SecurityNotes/Index.md"
-    },
-    {
       "basename": "Types Module",
       "path": "BinaryNinjaNotes/Binary Ninja/Types Module.md"
+    },
+    {
+      "basename": "Index",
+      "path": "SecurityNotes/Index.md"
     },
     {
       "basename": "Heap Exploitation",
