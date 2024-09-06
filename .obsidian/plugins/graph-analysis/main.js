@@ -7,6 +7,7 @@ if you want to view the source visit the plugins github repository
 
 var obsidian = require('obsidian');
 
+<<<<<<< HEAD
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -30,6 +31,31 @@ function __awaiter(thisArg, _arguments, P, generator) {
         function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
+=======
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+>>>>>>> ZeldaRev
 }
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
@@ -2095,6 +2121,7 @@ defineIterator(String, 'String', function (iterated) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 var g;
 
 // This works in non-strict mode
@@ -2115,6 +2142,28 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
+=======
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+>>>>>>> ZeldaRev
 
 
 /***/ }),
@@ -2438,6 +2487,7 @@ module.exports = __webpack_require__(/*! /home/travis/build/feathericons/feather
 
 });
 
+<<<<<<< HEAD
 /**
  * This module contains various utility functions commonly used in Obsidian plugins.
  * @module obsidian-community-lib
@@ -2564,6 +2614,134 @@ async function openView(app, viewType, viewClass, side = "right") {
         active: true,
     });
     return leaf.view;
+=======
+/**
+ * This module contains various utility functions commonly used in Obsidian plugins.
+ * @module obsidian-community-lib
+ */
+/**
+ * You can await this Function to delay execution
+ *
+ * @param delay The delay in ms
+ */
+async function wait(delay) {
+    return new Promise((resolve) => setTimeout(resolve, delay));
+}
+/**
+ * Copy `content` to the users clipboard.
+ *
+ * @param {string} content The content to be copied to clipboard.
+ * @param {() => any} success The callback to run when text is successfully copied. Default throws a new `Notice`
+ * @param {(reason?) => any} failure The callback to run when text was not able to be copied. Default throws a new `Notice`, and console logs the error.`
+ */
+async function copy$2(content, success = () => new obsidian.Notice("Copied to clipboard"), failure = (reason) => {
+    new obsidian.Notice("Could not copy to clipboard");
+    console.log({ reason });
+}) {
+    await navigator.clipboard.writeText(content).then(success, failure);
+}
+/**
+ * Check if `noteName` is the name of a note that exists in the vault.
+ * @param  {App} app
+ * @param  {string} noteName Basename of the note to search for.
+ * @param  {string} [sourcePath=""] Optional file path to start searching from. Default is the current file.
+ * @returns boolean
+ */
+const isInVault = (app, noteName, sourcePath = "") => !!app.metadataCache.getFirstLinkpathDest(noteName, sourcePath);
+/**
+ * When hovering a link going to `to`, show the Obsidian hover-preview of that note.
+ *
+ * You probably have to hold down `Ctrl` when hovering the link for the preview to appear!
+ * @param  {MouseEvent} event
+ * @param  {YourView} view The view with the link being hovered
+ * @param  {string} to The basename of the note to preview.
+ * @template YourView The ViewType of your view
+ * @returns void
+ */
+function hoverPreview$1(event, view, to) {
+    const targetEl = event.target;
+    view.app.workspace.trigger("hover-link", {
+        event,
+        source: view.getViewType(),
+        hoverParent: view,
+        targetEl,
+        linktext: to,
+    });
+}
+/**
+ * Create a new markdown note named `newName` in the user's preffered new-note-folder.
+ * @param  {App} app
+ * @param  {string} newName Name of new note (with or without '.md')
+ * @param  {string} [currFilePath=""] File path of the current note. Use an empty string if there is no active file.
+ * @returns {Promise<TFile>} new TFile
+ */
+async function createNewMDNote(app, newName, currFilePath = "") {
+    const newFileFolder = app.fileManager.getNewFileParent(currFilePath).path;
+    const newFilePath = obsidian.normalizePath(`${newFileFolder}${newFileFolder === "/" ? "" : "/"}${addMD(newName)}`);
+    return await app.vault.create(newFilePath, "");
+}
+/**
+ * Add '.md' to a `noteName` if it isn't already there.
+ * @param  {string} noteName with or without '.md' on the end.
+ * @returns {string} noteName with '.md' on the end.
+ */
+const addMD = (noteName) => {
+    let withMD = noteName.slice();
+    if (!withMD.endsWith(".md")) {
+        withMD += ".md";
+    }
+    return withMD;
+};
+/**
+ * Given a list of resolved links from app.metadataCache, check if `from` has a link to `to`
+ * @param  {ResolvedLinks} resolvedLinks
+ * @param  {string} from Note name with link leaving (With or without '.md')
+ * @param  {string} to Note name with link arriving (With or without '.md')
+ * @param {boolean} [directed=true] Only check if `from` has a link to `to`. If not directed, check in both directions
+ */
+function isLinked(resolvedLinks, from, to, directed = true) {
+    var _a, _b;
+    if (!from.endsWith(".md")) {
+        from += ".md";
+    }
+    if (!to.endsWith(".md")) {
+        to += ".md";
+    }
+    const fromTo = (_a = resolvedLinks[from]) === null || _a === void 0 ? void 0 : _a.hasOwnProperty(to);
+    if (!fromTo && !directed) {
+        const toFrom = (_b = resolvedLinks[to]) === null || _b === void 0 ? void 0 : _b.hasOwnProperty(from);
+        return toFrom;
+    }
+    else
+        return fromTo;
+}
+/**
+ * Open your view on the chosen `side` if it isn't already open
+ * @param  {App} app
+ * @param  {string} viewType
+ * @param  {Constructor<YourView>} viewClass The class constructor of your view
+ * @param  {"left"|"right"} [side="right"]
+ * @returns {Promise<YourView>} The opened view
+ */
+async function openView(app, viewType, viewClass, side = "right") {
+    let leaf = null;
+    for (leaf of app.workspace.getLeavesOfType(viewType)) {
+        if (leaf.view instanceof viewClass) {
+            return leaf.view;
+        }
+        await leaf.setViewState({ type: "empty" });
+        break;
+    }
+    leaf =
+        (leaf !== null && leaf !== void 0 ? leaf : side === "right")
+            ? app.workspace.getRightLeaf(false)
+            : app.workspace.getLeftLeaf(false);
+    await leaf.setViewState({
+        type: viewType,
+        active: true,
+    });
+    return leaf.view;
+>>>>>>> ZeldaRev
 }
 
 const DEFAULT_SETTINGS = {
@@ -34407,6 +34585,7 @@ sanitizeHtml.simpleTransform = function(newTagName, newAttribs, merge) {
   };
 };
 
+<<<<<<< HEAD
 var endsWithChar = function ends_with_char(word, c) {
     if (c.length > 1) {
         return c.indexOf(word.slice(-1)) > -1;
@@ -34417,6 +34596,18 @@ var endsWithChar = function ends_with_char(word, c) {
 
 var endsWith = function ends_with(word, end) {
     return word.slice(word.length - end.length) === end;
+=======
+var endsWithChar = function ends_with_char(word, c) {
+    if (c.length > 1) {
+        return c.indexOf(word.slice(-1)) > -1;
+    }
+
+    return word.slice(-1) === c;
+};
+
+var endsWith = function ends_with(word, end) {
+    return word.slice(word.length - end.length) === end;
+>>>>>>> ZeldaRev
 };
 
 var stringHelper = {
@@ -34425,6 +34616,7 @@ var stringHelper = {
 };
 
 var Match = createCommonjsModule(function (module, exports) {
+<<<<<<< HEAD
 var abbreviations;
 
 var englishAbbreviations = [
@@ -34603,11 +34795,192 @@ exports.isBoundaryChar = function(word) {
     return word === "." ||
            word === "!" ||
            word === "?";
+=======
+var abbreviations;
+
+var englishAbbreviations = [
+    "al",
+    "adj",
+    "assn",
+    "Ave",
+    "BSc", "MSc",
+    "Cell",
+    "Ch",
+    "Co",
+    "cc",
+    "Corp",
+    "Dem",
+    "Dept",
+    "ed",
+    "eg",
+    "Eq",
+    "Eqs",
+    "est",
+    "est",
+    "etc",
+    "Ex",
+    "ext", // + number?
+    "Fig",
+    "fig",
+    "Figs",
+    "figs",
+    "i.e",
+    "ie",
+    "Inc",
+    "inc",
+    "Jan","Feb","Mar","Apr","Jun","Jul","Aug","Sep","Sept","Oct","Nov","Dec",
+    "jr",
+    "mi",
+    "Miss", "Mrs", "Mr", "Ms",
+    "Mol",
+    "mt",
+    "mts",
+    "no",
+    "Nos",
+    "PhD", "MD", "BA", "MA", "MM",
+    "pl",
+    "pop",
+    "pp",
+    "Prof", "Dr",
+    "pt",
+    "Ref",
+    "Refs",
+    "Rep",
+    "repr",
+    "rev",
+    "Sec",
+    "Secs",
+    "Sgt", "Col", "Gen", "Rep", "Sen",'Gov', "Lt", "Maj", "Capt","St",
+    "Sr", "sr", "Jr", "jr", "Rev",
+    "Sun","Mon","Tu","Tue","Tues","Wed","Th","Thu","Thur","Thurs","Fri","Sat",
+    "trans",
+    "Univ",
+    "Viz",
+    "Vol",
+    "vs",
+    "v",
+];
+
+exports.setAbbreviations = function(abbr) {
+    if (abbr) {
+        abbreviations = abbr;
+    } else {
+        abbreviations = englishAbbreviations;
+    }
+};
+
+var isCapitalized = exports.isCapitalized = function(str) {
+    return /^[A-Z][a-z].*/.test(str) || isNumber(str);
+};
+
+// Start with opening quotes or capitalized letter
+exports.isSentenceStarter = function(str) {
+    return isCapitalized(str) || /``|"|'/.test(str.substring(0,2));
+};
+
+exports.isCommonAbbreviation = function(str) {
+    var noSymbols = str.replace(/[-'`~!@#$%^&*()_|+=?;:'",.<>\{\}\[\]\\\/]/gi, "");
+
+    return ~abbreviations.indexOf(noSymbols);
+};
+
+// This is going towards too much rule based
+exports.isTimeAbbreviation = function(word, next) {
+    if (word === "a.m." || word === "p.m.") {
+        var tmp = next.replace(/\W+/g, '').slice(-3).toLowerCase();
+
+        if (tmp === "day") {
+            return true;
+        }
+    }
+
+    return false;
+};
+
+exports.isDottedAbbreviation = function(word) {
+    var matches = word.replace(/[\(\)\[\]\{\}]/g, '').match(/(.\.)*/);
+    return matches && matches[0].length > 0;
+};
+
+// TODO look for next words, if multiple are capitalized,
+// then it's probably not a sentence ending
+exports.isCustomAbbreviation = function(str) {
+    if (str.length <= 3) {
+        return true;
+    }
+
+    return isCapitalized(str);
+};
+
+// Uses current word count in sentence and next few words to check if it is
+// more likely an abbreviation + name or new sentence.
+exports.isNameAbbreviation = function(wordCount, words) {
+    if (words.length > 0) {
+        if (wordCount < 5 && words[0].length < 6 && isCapitalized(words[0])) {
+            return true;
+        }
+
+        var capitalized = words.filter(function(str) {
+            return /[A-Z]/.test(str.charAt(0));
+        });
+
+        return capitalized.length >= 3;
+    }
+
+    return false;
+};
+
+var isNumber = exports.isNumber = function(str, dotPos) {
+    if (dotPos) {
+        str = str.slice(dotPos-1, dotPos+2);
+    }
+
+    return !isNaN(str);
+};
+
+// Phone number matching
+// http://stackoverflow.com/a/123666/951517
+exports.isPhoneNr = function(str) {
+    return str.match(/^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/);
+};
+
+// Match urls / emails
+// http://stackoverflow.com/a/3809435/951517
+exports.isURL = function(str) {
+    return str.match(/[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/);
+};
+
+// Starting a new sentence if beginning with capital letter
+// Exception: The word is enclosed in brackets
+exports.isConcatenated = function(word) {
+    var i = 0;
+
+    if ((i = word.indexOf(".")) > -1 ||
+        (i = word.indexOf("!")) > -1 ||
+        (i = word.indexOf("?")) > -1)
+    {
+        var c = word.charAt(i + 1);
+
+        // Check if the next word starts with a letter
+        if (c.match(/[a-zA-Z].*/)) {
+            return [word.slice(0, i), word.slice(i+1)];
+        }
+    }
+
+    return false;
+};
+
+exports.isBoundaryChar = function(word) {
+    return word === "." ||
+           word === "!" ||
+           word === "?";
+>>>>>>> ZeldaRev
 };
 });
 
 /*jshint node:true, laxcomma:true */
 
+<<<<<<< HEAD
 var newline_placeholder = " @~@ ";
 var newline_placeholder_t = newline_placeholder.trim();
 
@@ -34865,6 +35238,265 @@ var sentences = function(text, user_options) {
 
       return sentence.join(" ");
     });
+=======
+var newline_placeholder = " @~@ ";
+var newline_placeholder_t = newline_placeholder.trim();
+
+
+var whiteSpaceCheck = new RegExp("\\S", "");
+var addNewLineBoundaries = new RegExp("\\n+|[-#=_+*]{4,}", "g");
+var splitIntoWords = new RegExp("\\S+|\\n", "g");
+
+
+// Split the entry into sentences.
+var sentences = function(text, user_options) {
+    if (!text || typeof text !== "string" || !text.length) {
+        return [];
+    }
+
+    if (!whiteSpaceCheck.test(text)) {
+      // whitespace-only string has no sentences
+      return [];
+    }
+
+    var options = {
+        "newline_boundaries"  : false,
+        "html_boundaries"     : false,
+        "html_boundaries_tags": ["p","div","ul","ol"],
+        "sanitize"            : false,
+        "allowed_tags"        : false,
+        "preserve_whitespace" : false,
+        "abbreviations"       : null
+    };
+
+    if (typeof user_options === "boolean") {
+        // Deprecated quick option
+        options.newline_boundaries = true;
+    }
+    else {
+        // Extend options
+        for (var k in user_options) {
+            options[k] = user_options[k];
+        }
+    }
+
+    Match.setAbbreviations(options.abbreviations);
+
+    if (options.newline_boundaries) {
+        text = text.replace(addNewLineBoundaries, newline_placeholder);
+    }
+
+    if (options.html_boundaries) {
+        var html_boundaries_regexp = "(<br\\s*\\/?>|<\\/(" + options.html_boundaries_tags.join("|") + ")>)";
+        var re = new RegExp(html_boundaries_regexp, "g");
+        text = text.replace(re, "$1" + newline_placeholder);
+    }
+
+    if (options.sanitize || options.allowed_tags) {
+        if (! options.allowed_tags) {
+            options.allowed_tags = [""];
+        }
+
+        text = sanitizeHtml_1(text, { "allowedTags" : options.allowed_tags });
+    }
+
+
+    // Split the text into words
+    var words;
+    var tokens;
+
+    // Split the text into words
+    if (options.preserve_whitespace) {
+        // <br> tags are the odd man out, as whitespace is allowed inside the tag
+        tokens = text.split(/(<br\s*\/?>|\S+|\n+)/);
+
+        // every other token is a word
+        words = tokens.filter(function (token, ii) {
+          return ii % 2;
+        });
+    }
+    else {
+        // - see http://blog.tompawlak.org/split-string-into-tokens-javascript
+        words = text.trim().match(splitIntoWords);
+    }
+
+
+    var wordCount = 0;
+    var index = 0;
+    var temp  = [];
+    var sentences = [];
+    var current   = [];
+
+    // If given text is only whitespace (or nothing of \S+)
+    if (!words || !words.length) {
+        return [];
+    }
+
+    for (var i=0, L=words.length; i < L; i++) {
+        wordCount++;
+
+        // Add the word to current sentence
+        current.push(words[i]);
+
+        // Sub-sentences, reset counter
+        if (~words[i].indexOf(",")) {
+            wordCount = 0;
+        }
+
+        if (Match.isBoundaryChar(words[i]) || stringHelper.endsWithChar(words[i], "?!") || words[i] === newline_placeholder_t) {
+            if ((options.newline_boundaries || options.html_boundaries) && words[i] === newline_placeholder_t) {
+                current.pop();
+            }
+
+            sentences.push(current);
+
+            wordCount = 0;
+            current   = [];
+
+            continue;
+        }
+
+
+        if (stringHelper.endsWithChar(words[i], "\"") || stringHelper.endsWithChar(words[i], "”")) {
+            words[i] = words[i].slice(0, -1);
+        }
+
+        // A dot might indicate the end sentences
+        // Exception: The next sentence starts with a word (non abbreviation)
+        //            that has a capital letter.
+        if (stringHelper.endsWithChar(words[i], ".")) {
+            // Check if there is a next word
+            // This probably needs to be improved with machine learning
+            if (i+1 < L) {
+                // Single character abbr.
+                if (words[i].length === 2 && isNaN(words[i].charAt(0))) {
+                    continue;
+                }
+
+                // Common abbr. that often do not end sentences
+                if (Match.isCommonAbbreviation(words[i])) {
+                    continue;
+                }
+
+                // Next word starts with capital word, but current sentence is
+                // quite short
+                if (Match.isSentenceStarter(words[i+1])) {
+                    if (Match.isTimeAbbreviation(words[i], words[i+1])) {
+                        continue;
+                    }
+
+                    // Dealing with names at the start of sentences
+                    if (Match.isNameAbbreviation(wordCount, words.slice(i, 6))) {
+                        continue;
+                    }
+
+                    if (Match.isNumber(words[i+1])) {
+                        if (Match.isCustomAbbreviation(words[i])) {
+                            continue;
+                        }
+                    }
+                }
+                else {
+                    // Skip ellipsis
+                    if (stringHelper.endsWith(words[i], "..")) {
+                        continue;
+                    }
+
+                    //// Skip abbreviations
+                    // Short words + dot or a dot after each letter
+                    if (Match.isDottedAbbreviation(words[i])) {
+                        continue;
+                    }
+
+                    if (Match.isNameAbbreviation(wordCount, words.slice(i, 5))) {
+                        continue;
+                    }
+                }
+            }
+
+            sentences.push(current);
+            current   = [];
+            wordCount = 0;
+
+            continue;
+        }
+
+        // Check if the word has a dot in it
+        if ((index = words[i].indexOf(".")) > -1) {
+            if (Match.isNumber(words[i], index)) {
+                continue;
+            }
+
+            // Custom dotted abbreviations (like K.L.M or I.C.T)
+            if (Match.isDottedAbbreviation(words[i])) {
+                continue;
+            }
+
+            // Skip urls / emails and the like
+            if (Match.isURL(words[i]) || Match.isPhoneNr(words[i])) {
+                continue;
+            }
+        }
+
+        if (temp = Match.isConcatenated(words[i])) {
+            current.pop();
+            current.push(temp[0]);
+            sentences.push(current);
+
+            current = [];
+            wordCount = 0;
+            current.push(temp[1]);
+        }
+    }
+
+    if (current.length) {
+        sentences.push(current);
+    }
+
+
+    // Clear "empty" sentences
+    sentences = sentences.filter(function(s) {
+        return s.length > 0;
+    });
+
+    var result = sentences.slice(1).reduce(function (out, sentence) {
+      var lastSentence = out[out.length - 1];
+
+      // Single words, could be "enumeration lists"
+      if (lastSentence.length === 1 && /^.{1,2}[.]$/.test(lastSentence[0])) {
+          // Check if there is a next sentence
+          // It should not be another list item
+          if (!/[.]/.test(sentence[0])) {
+              out.pop();
+              out.push(lastSentence.concat(sentence));
+              return out;
+          }
+      }
+
+      out.push(sentence);
+
+      return out;
+    }, [ sentences[0] ]);
+
+    // join tokens back together
+    return result.map(function (sentence, ii) {
+      if (options.preserve_whitespace && !options.newline_boundaries && !options.html_boundaries) {
+        // tokens looks like so: [leading-space token, non-space token, space
+        // token, non-space token, space token... ]. In other words, the first
+        // item is the leading space (or the empty string), and the rest of
+        // the tokens are [non-space, space] token pairs.
+        var tokenCount = sentence.length * 2;
+
+        if (ii === 0) {
+          tokenCount += 1;
+        }
+
+        return tokens.splice(0, tokenCount).join("");
+      }
+
+      return sentence.join(" ");
+    });
+>>>>>>> ZeldaRev
 };
 
 var tokenizer = {

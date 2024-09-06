@@ -1,9 +1,17 @@
 {
     "id": "obsidian-git",
+<<<<<<< HEAD
     "name": "Git",
+=======
+    "name": "Obsidian Git",
+>>>>>>> ZeldaRev
     "description": "Backup your vault with Git.",
     "isDesktopOnly": false,
     "fundingUrl": "https://ko-fi.com/vinzent",
     "js": "main.js",
+<<<<<<< HEAD
     "version": "2.23.2"
+=======
+    "version": "2.22.0"
+>>>>>>> ZeldaRev
 }

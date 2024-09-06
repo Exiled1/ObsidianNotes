@@ -29274,7 +29274,10 @@ var DEFAULT_SETTINGS = {
   disablePush: false,
   pullBeforePush: true,
   disablePopups: false,
+<<<<<<< HEAD
   disablePopupsForNoChanges: false,
+=======
+>>>>>>> ZeldaRev
   listChangedFilesInMessageBody: false,
   showStatusBar: true,
   updateSubmodules: false,
@@ -29418,11 +29421,14 @@ function getDisplayPath(path2) {
     return path2;
   return path2.split("/").last().replace(".md", "");
 }
+<<<<<<< HEAD
 function formatMinutes(minutes) {
   if (minutes === 1)
     return "1 minute";
   return `${minutes} minutes`;
 }
+=======
+>>>>>>> ZeldaRev
 
 // src/gitManager/gitManager.ts
 init_polyfill_buffer();
@@ -29612,6 +29618,7 @@ var SimpleGit = class extends GitManager {
     this.plugin.setState(1 /* status */);
     const status2 = await this.git.status((err) => this.onError(err));
     this.plugin.setState(0 /* idle */);
+<<<<<<< HEAD
     const allFilesFormatted = status2.files.map((e) => {
       const res = this.formatPath(e);
       return {
@@ -29628,6 +29635,27 @@ var SimpleGit = class extends GitManager {
       staged: allFilesFormatted.filter(
         (e) => e.index !== " " && e.index != "U"
       ),
+=======
+    return {
+      changed: status2.files.filter((e) => e.working_dir !== " ").map((e) => {
+        const res = this.formatPath(e);
+        return {
+          path: res.path,
+          from: res.from,
+          working_dir: e.working_dir === "?" ? "U" : e.working_dir,
+          vault_path: this.getVaultPath(res.path)
+        };
+      }),
+      staged: status2.files.filter((e) => e.index !== " " && e.index != "?").map((e) => {
+        const res = this.formatPath(e, e.index === "R");
+        return {
+          path: res.path,
+          from: res.from,
+          index: e.index,
+          vault_path: this.getVaultPath(res.path)
+        };
+      }),
+>>>>>>> ZeldaRev
       conflicted: status2.conflicted.map(
         (path2) => this.formatPath({ path: path2 }).path
       )
@@ -29752,6 +29780,7 @@ var SimpleGit = class extends GitManager {
     dispatchEvent(new CustomEvent("git-head-update"));
     return res.summary.changes;
   }
+<<<<<<< HEAD
   async commit({
     message,
     amend
@@ -29760,6 +29789,12 @@ var SimpleGit = class extends GitManager {
     const res = (await this.git.commit(
       await this.formatCommitMessage(message),
       amend ? ["--amend"] : [],
+=======
+  async commit(message) {
+    this.plugin.setState(4 /* commit */);
+    const res = (await this.git.commit(
+      await this.formatCommitMessage(message),
+>>>>>>> ZeldaRev
       (err) => this.onError(err)
     )).summary.changes;
     dispatchEvent(new CustomEvent("git-head-update"));
@@ -29949,6 +29984,7 @@ var SimpleGit = class extends GitManager {
     };
   }
   async getRemoteUrl(remote) {
+<<<<<<< HEAD
     try {
       await this.git.remote(["get-url", remote]);
     } catch (error) {
@@ -29958,6 +29994,12 @@ var SimpleGit = class extends GitManager {
         this.onError(error);
       }
     }
+=======
+    return await this.git.remote(
+      ["get-url", remote],
+      (err, url) => this.onError(err)
+    ) || void 0;
+>>>>>>> ZeldaRev
   }
   // https://github.com/kometenstaub/obsidian-version-history-diff/issues/3
   async log(file, relativeToVault = true, limit) {
@@ -31265,7 +31307,11 @@ var IsomorphicGit = class extends GitManager {
       const conflicted = [];
       window.clearTimeout(timeout);
       notice == null ? void 0 : notice.hide();
+<<<<<<< HEAD
       return { all: status2, changed, staged, conflicted };
+=======
+      return { changed, staged, conflicted };
+>>>>>>> ZeldaRev
     } catch (error) {
       window.clearTimeout(timeout);
       notice == null ? void 0 : notice.hide();
@@ -31281,20 +31327,32 @@ var IsomorphicGit = class extends GitManager {
     try {
       await this.checkAuthorInfo();
       await this.stageAll({ status: status2, unstagedFiles });
+<<<<<<< HEAD
       return this.commit({ message });
+=======
+      return this.commit(message);
+>>>>>>> ZeldaRev
     } catch (error) {
       this.plugin.displayError(error);
       throw error;
     }
   }
+<<<<<<< HEAD
   async commit({
     message
   }) {
+=======
+  async commit(message) {
+>>>>>>> ZeldaRev
     try {
       await this.checkAuthorInfo();
       this.plugin.setState(4 /* commit */);
       const formatMessage = await this.formatCommitMessage(message);
+<<<<<<< HEAD
       const hadConflict = this.plugin.localStorage.getConflict();
+=======
+      const hadConflict = this.plugin.localStorage.getConflict() === "true";
+>>>>>>> ZeldaRev
       let parent = void 0;
       if (hadConflict) {
         const branchInfo = await this.branchInfo();
@@ -31307,7 +31365,11 @@ var IsomorphicGit = class extends GitManager {
           parent
         })
       );
+<<<<<<< HEAD
       this.plugin.localStorage.setConflict(false);
+=======
+      this.plugin.localStorage.setConflict("false");
+>>>>>>> ZeldaRev
       return;
     } catch (error) {
       this.plugin.displayError(error);
@@ -31645,7 +31707,11 @@ var IsomorphicGit = class extends GitManager {
       throw error;
     }
   }
+<<<<<<< HEAD
   async branchIsMerged(_) {
+=======
+  async branchIsMerged(branch2) {
+>>>>>>> ZeldaRev
     return true;
   }
   async init() {
@@ -31812,7 +31878,11 @@ var IsomorphicGit = class extends GitManager {
     );
     await this.setConfig(`branch.${branch2}.remote`, remote);
   }
+<<<<<<< HEAD
   updateGitPath(_) {
+=======
+  updateGitPath(gitPath) {
+>>>>>>> ZeldaRev
     return;
   }
   async getFileChangesCount(commitHash1, commitHash2) {
@@ -32021,8 +32091,13 @@ var IsomorphicGit = class extends GitManager {
       return diff2;
     } else {
       let workdirContent;
+<<<<<<< HEAD
       if (await this.app.vault.adapter.exists(vaultPath)) {
         workdirContent = await this.app.vault.adapter.read(vaultPath);
+=======
+      if (await app.vault.adapter.exists(vaultPath)) {
+        workdirContent = await app.vault.adapter.read(vaultPath);
+>>>>>>> ZeldaRev
       } else {
         workdirContent = "";
       }
@@ -32181,9 +32256,13 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
                 plugin.settings.autoSaveInterval
               );
               new import_obsidian8.Notice(
+<<<<<<< HEAD
                 `Automatic ${commitOrBackup} enabled! Every ${formatMinutes(
                   plugin.settings.autoSaveInterval
                 )}.`
+=======
+                `Automatic ${commitOrBackup} enabled! Every ${plugin.settings.autoSaveInterval} minutes.`
+>>>>>>> ZeldaRev
               );
             } else if (plugin.settings.autoSaveInterval <= 0) {
               plugin.clearAutoBackup() && new import_obsidian8.Notice(
@@ -32196,12 +32275,17 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         })
       );
       if (!plugin.settings.setLastSaveToLastCommit)
+<<<<<<< HEAD
         new import_obsidian8.Setting(containerEl).setName(`Auto Backup after stopping file edits`).setDesc(
           `Requires the ${commitOrBackup} interval not to be 0.
                         If turned on, do auto ${commitOrBackup} every ${formatMinutes(
             plugin.settings.autoSaveInterval
           )} after stopping file edits.
                         This also prevents auto ${commitOrBackup} while editing a file. If turned off, it's independent from the last change.`
+=======
+        new import_obsidian8.Setting(containerEl).setName(`Auto Backup after stop editing any file`).setDesc(
+          `Requires the ${commitOrBackup} interval not to be 0. If turned on, do auto ${commitOrBackup} every ${plugin.settings.autoSaveInterval} minutes after stop editing any file. This also prevents auto ${commitOrBackup} while editing a file. If turned off, it's independent from the last change.`
+>>>>>>> ZeldaRev
         ).addToggle(
           (toggle) => toggle.setValue(plugin.settings.autoBackupAfterFileChange).onChange((value) => {
             plugin.settings.autoBackupAfterFileChange = value;
@@ -32241,9 +32325,13 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
                   plugin.settings.autoPushInterval
                 );
                 new import_obsidian8.Notice(
+<<<<<<< HEAD
                   `Automatic push enabled! Every ${formatMinutes(
                     plugin.settings.autoPushInterval
                   )}.`
+=======
+                  `Automatic push enabled! Every ${plugin.settings.autoPushInterval} minutes.`
+>>>>>>> ZeldaRev
                 );
               } else if (plugin.settings.autoPushInterval <= 0) {
                 plugin.clearAutoPush() && new import_obsidian8.Notice(
@@ -32271,9 +32359,13 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
                 plugin.settings.autoPullInterval
               );
               new import_obsidian8.Notice(
+<<<<<<< HEAD
                 `Automatic pull enabled! Every ${formatMinutes(
                   plugin.settings.autoPullInterval
                 )}.`
+=======
+                `Automatic pull enabled! Every ${plugin.settings.autoPullInterval} minutes.`
+>>>>>>> ZeldaRev
               );
             } else if (plugin.settings.autoPullInterval <= 0) {
               plugin.clearAutoPull() && new import_obsidian8.Notice("Automatic pull disabled!");
@@ -32309,14 +32401,23 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           plugin.saveSettings();
         })
       );
+<<<<<<< HEAD
       const datePlaceholderSetting = new import_obsidian8.Setting(containerEl).setName("{{date}} placeholder format").addText(
+=======
+      new import_obsidian8.Setting(containerEl).setName("{{date}} placeholder format").setDesc(
+        `Specify custom date format. E.g. "${DATE_TIME_FORMAT_SECONDS}"`
+      ).addText(
+>>>>>>> ZeldaRev
         (text2) => text2.setPlaceholder(plugin.settings.commitDateFormat).setValue(plugin.settings.commitDateFormat).onChange(async (value) => {
           plugin.settings.commitDateFormat = value;
           await plugin.saveSettings();
         })
       );
+<<<<<<< HEAD
       datePlaceholderSetting.descEl.innerHTML = `
             Specify custom date format. E.g. "${DATE_TIME_FORMAT_SECONDS}. See <a href="https://momentjs.com">Moment.js</a> for more formats.`;
+=======
+>>>>>>> ZeldaRev
       new import_obsidian8.Setting(containerEl).setName("{{hostname}} placeholder replacement").setDesc("Specify custom hostname for every device.").addText(
         (text2) => {
           var _a2;
@@ -32412,6 +32513,7 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
     ).addToggle(
       (toggle) => toggle.setValue(plugin.settings.disablePopups).onChange((value) => {
         plugin.settings.disablePopups = value;
+<<<<<<< HEAD
         this.display();
         plugin.saveSettings();
       })
@@ -32425,6 +32527,11 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
           plugin.saveSettings();
         })
       );
+=======
+        plugin.saveSettings();
+      })
+    );
+>>>>>>> ZeldaRev
     new import_obsidian8.Setting(containerEl).setName("Show status bar").setDesc(
       "Obsidian must be restarted for the changes to take affect"
     ).addToggle(
@@ -32447,7 +32554,11 @@ var ObsidianGitSettingsTab = class extends import_obsidian8.PluginSettingTab {
         plugin.saveSettings();
       })
     );
+<<<<<<< HEAD
     new import_obsidian8.Setting(containerEl).setName("Show the count of modified files in the status bar").addToggle(
+=======
+    new import_obsidian8.Setting(containerEl).setName("Show changes files count in status bar").addToggle(
+>>>>>>> ZeldaRev
       (toggle) => toggle.setValue(plugin.settings.changedFilesInStatusBar).onChange((value) => {
         plugin.settings.changedFilesInStatusBar = value;
         plugin.saveSettings();
@@ -33011,7 +33122,11 @@ var LineAuthoringSubscriber = class {
   async notifyLineAuthoring(id, la) {
     if (this.view === void 0) {
       console.warn(
+<<<<<<< HEAD
         `Git: View is not defined for editor cache key. Unforeseen situation. id: ${id}`
+=======
+        `Obsidian Git: View is not defined for editor cache key. Unforeseen situation. id: ${id}`
+>>>>>>> ZeldaRev
       );
       return;
     }
@@ -33761,7 +33876,11 @@ var LineAuthorProvider = class {
   }
   async trackChanged(file) {
     this.trackChangedHelper(file).catch((reason) => {
+<<<<<<< HEAD
       console.warn("Git: Error in trackChanged." + reason);
+=======
+      console.warn("Obsidian Git: Error in trackChanged." + reason);
+>>>>>>> ZeldaRev
       return Promise.reject(reason);
     });
   }
@@ -33770,7 +33889,11 @@ var LineAuthorProvider = class {
       return;
     if (file.path === void 0) {
       console.warn(
+<<<<<<< HEAD
         "Git: Attempted to track change of undefined filepath. Unforeseen situation."
+=======
+        "Obsidian Git: Attempted to track change of undefined filepath. Unforeseen situation."
+>>>>>>> ZeldaRev
       );
       return;
     }
@@ -33827,7 +33950,11 @@ var LineAuthoringFeature = class {
       const file = obsView == null ? void 0 : obsView.file;
       if (!this.lineAuthorInfoProvider) {
         console.warn(
+<<<<<<< HEAD
           "Git: undefined lineAuthorInfoProvider. Unexpected situation."
+=======
+          "Obsidian Git: undefined lineAuthorInfoProvider. Unexpected situation."
+>>>>>>> ZeldaRev
         );
         return;
       }
@@ -33862,7 +33989,14 @@ var LineAuthoringFeature = class {
       this.activateCodeMirrorExtensions();
       console.log(this.plg.manifest.name + ": Enabled line authoring.");
     } catch (e) {
+<<<<<<< HEAD
       console.warn("Git: Error while loading line authoring feature.", e);
+=======
+      console.warn(
+        "Obsidian Git: Error while loading line authoring feature.",
+        e
+      );
+>>>>>>> ZeldaRev
       this.deactivateFeature();
     }
   }
@@ -34003,7 +34137,10 @@ var StatusBar = class {
     this.messages = [];
     this.base = "obsidian-git-statusbar-";
     this.statusBarEl.setAttribute("aria-label-position", "top");
+<<<<<<< HEAD
     this.statusBarEl.setAttribute("data-tooltip-position", "top");
+=======
+>>>>>>> ZeldaRev
     addEventListener("git-refresh", this.refreshCommitTimestamp.bind(this));
   }
   displayMessage(message, timeout) {
@@ -34134,7 +34271,11 @@ var ChangedFilesModal = class extends import_obsidian14.FuzzySuggestModal {
     let working_dir = "";
     let index2 = "";
     if (item.working_dir != " ")
+<<<<<<< HEAD
       working_dir = `Working Dir: ${item.working_dir} `;
+=======
+      working_dir = `Working dir: ${item.working_dir} `;
+>>>>>>> ZeldaRev
     if (item.index != " ")
       index2 = `Index: ${item.index}`;
     return `${working_dir}${index2} | ${item.vault_path}`;
@@ -34256,7 +34397,11 @@ async function getData(manager) {
     `remote.${remote}.url`
   );
   const [isGitHub, httpsUser, httpsRepo, sshUser, sshRepo] = remoteUrl.match(
+<<<<<<< HEAD
     /(?:^https:\/\/github\.com\/(.*)\/(.*)\.git$)|(?:^[a-zA-Z]+@github\.com:(.*)\/(.*)\.git$)/
+=======
+    /(?:^https:\/\/github\.com\/(.*)\/(.*)\.git$)|(?:^git@github\.com:(.*)\/(.*)\.git$)/
+>>>>>>> ZeldaRev
   );
   return {
     result: "success",
@@ -34314,10 +34459,17 @@ var LocalStorageSettings = class {
     return app.saveLocalStorage(this.prefix + "hostname", value);
   }
   getConflict() {
+<<<<<<< HEAD
     return app.loadLocalStorage(this.prefix + "conflict") == "true";
   }
   setConflict(value) {
     return app.saveLocalStorage(this.prefix + "conflict", `${value}`);
+=======
+    return app.loadLocalStorage(this.prefix + "conflict");
+  }
+  setConflict(value) {
+    return app.saveLocalStorage(this.prefix + "conflict", value);
+>>>>>>> ZeldaRev
   }
   getLastAutoPull() {
     return app.loadLocalStorage(this.prefix + "lastAutoPull");
@@ -37101,12 +37253,15 @@ function create_fragment(ctx) {
         /*side*/
         ctx[3]
       );
+<<<<<<< HEAD
       attr(
         div3,
         "data-tooltip-position",
         /*side*/
         ctx[3]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div3, "aria-label", div3_aria_label_value = /*diff*/
       ctx[0].vault_path);
       toggle_class(
@@ -37202,6 +37357,7 @@ function create_fragment(ctx) {
           ctx2[3]
         );
       }
+<<<<<<< HEAD
       if (dirty & /*side*/
       8) {
         attr(
@@ -37211,6 +37367,8 @@ function create_fragment(ctx) {
           ctx2[3]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (dirty & /*diff*/
       1 && div3_aria_label_value !== (div3_aria_label_value = /*diff*/
       ctx2[0].vault_path)) {
@@ -37377,12 +37535,15 @@ function create_else_block(ctx) {
         /*side*/
         ctx[5]
       );
+<<<<<<< HEAD
       attr(
         div3,
         "data-tooltip-position",
         /*side*/
         ctx[5]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div3, "aria-label", div3_aria_label_value = /*entity*/
       ctx[8].vaultPath);
       attr(div4, "class", "tree-item nav-folder");
@@ -37442,6 +37603,7 @@ function create_else_block(ctx) {
           ctx[5]
         );
       }
+<<<<<<< HEAD
       if (!current || dirty & /*side*/
       32) {
         attr(
@@ -37451,6 +37613,8 @@ function create_else_block(ctx) {
           ctx[5]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (!current || dirty & /*hierarchy*/
       1 && div3_aria_label_value !== (div3_aria_label_value = /*entity*/
       ctx[8].vaultPath)) {
@@ -38240,12 +38404,15 @@ function create_fragment3(ctx) {
         /*side*/
         ctx[5]
       );
+<<<<<<< HEAD
       attr(
         div1,
         "data-tooltip-position",
         /*side*/
         ctx[5]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div3, "class", "tree-item-self is-clickable nav-folder-title");
       attr(div4, "class", "tree-item nav-folder");
       toggle_class(
@@ -38324,6 +38491,7 @@ function create_fragment3(ctx) {
           ctx2[5]
         );
       }
+<<<<<<< HEAD
       if (!current || dirty & /*side*/
       32) {
         attr(
@@ -38333,6 +38501,8 @@ function create_fragment3(ctx) {
           ctx2[5]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (!/*isCollapsed*/
       ctx2[4]) {
         if (if_block1) {
@@ -39115,12 +39285,15 @@ function create_fragment5(ctx) {
         /*side*/
         ctx[3]
       );
+<<<<<<< HEAD
       attr(
         div6,
         "data-tooltip-position",
         /*side*/
         ctx[3]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div6, "aria-label", div6_aria_label_value = /*change*/
       ctx[0].vault_path);
       toggle_class(
@@ -39237,6 +39410,7 @@ function create_fragment5(ctx) {
           ctx2[3]
         );
       }
+<<<<<<< HEAD
       if (dirty & /*side*/
       8) {
         attr(
@@ -39246,6 +39420,8 @@ function create_fragment5(ctx) {
           ctx2[3]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (dirty & /*change*/
       1 && div6_aria_label_value !== (div6_aria_label_value = /*change*/
       ctx2[0].vault_path)) {
@@ -39441,12 +39617,15 @@ function create_fragment6(ctx) {
         /*side*/
         ctx[1]
       );
+<<<<<<< HEAD
       attr(
         div2,
         "data-tooltip-position",
         /*side*/
         ctx[1]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div2, "aria-label", div2_aria_label_value = /*change*/
       ctx[0].vault_path);
       attr(main, "class", "tree-item nav-file svelte-1wbh8tp");
@@ -39516,6 +39695,7 @@ function create_fragment6(ctx) {
           ctx2[1]
         );
       }
+<<<<<<< HEAD
       if (dirty & /*side*/
       2) {
         attr(
@@ -39525,6 +39705,8 @@ function create_fragment6(ctx) {
           ctx2[1]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (dirty & /*change*/
       1 && div2_aria_label_value !== (div2_aria_label_value = /*change*/
       ctx2[0].vault_path)) {
@@ -39692,12 +39874,15 @@ function create_fragment7(ctx) {
         /*side*/
         ctx[3]
       );
+<<<<<<< HEAD
       attr(
         div5,
         "data-tooltip-position",
         /*side*/
         ctx[3]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div5, "aria-label", div5_aria_label_value = /*change*/
       ctx[0].vault_path);
       toggle_class(
@@ -39807,6 +39992,7 @@ function create_fragment7(ctx) {
           ctx2[3]
         );
       }
+<<<<<<< HEAD
       if (dirty & /*side*/
       8) {
         attr(
@@ -39816,6 +40002,8 @@ function create_fragment7(ctx) {
           ctx2[3]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (dirty & /*change*/
       1 && div5_aria_label_value !== (div5_aria_label_value = /*change*/
       ctx2[0].vault_path)) {
@@ -39849,6 +40037,10 @@ function create_fragment7(ctx) {
   };
 }
 function instance7($$self, $$props, $$invalidate) {
+<<<<<<< HEAD
+=======
+  let formattedPath;
+>>>>>>> ZeldaRev
   let side;
   let { change } = $$props;
   let { view } = $$props;
@@ -39904,6 +40096,14 @@ function instance7($$self, $$props, $$invalidate) {
       $$invalidate(8, manager = $$props2.manager);
   };
   $$self.$$.update = () => {
+<<<<<<< HEAD
+=======
+    if ($$self.$$.dirty & /*change*/
+    1) {
+      $:
+        formattedPath = change.vault_path;
+    }
+>>>>>>> ZeldaRev
     if ($$self.$$.dirty & /*view*/
     2) {
       $:
@@ -40036,12 +40236,15 @@ function create_else_block3(ctx) {
         /*side*/
         ctx[6]
       );
+<<<<<<< HEAD
       attr(
         div6,
         "data-tooltip-position",
         /*side*/
         ctx[6]
       );
+=======
+>>>>>>> ZeldaRev
       attr(div6, "aria-label", div6_aria_label_value = /*entity*/
       ctx[15].vaultPath);
       attr(div7, "class", "tree-item nav-folder");
@@ -40076,7 +40279,11 @@ function create_else_block3(ctx) {
       append2(div7, t6);
       current = true;
       if (!mounted) {
+<<<<<<< HEAD
         dispose = listen(div7, "click", stop_propagation(click_handler_3));
+=======
+        dispose = listen(div7, "click", click_handler_3);
+>>>>>>> ZeldaRev
         mounted = true;
       }
     },
@@ -40117,6 +40324,7 @@ function create_else_block3(ctx) {
           ctx[6]
         );
       }
+<<<<<<< HEAD
       if (!current || dirty & /*side*/
       64) {
         attr(
@@ -40126,6 +40334,8 @@ function create_else_block3(ctx) {
           ctx[6]
         );
       }
+=======
+>>>>>>> ZeldaRev
       if (!current || dirty & /*hierarchy*/
       1 && div6_aria_label_value !== (div6_aria_label_value = /*entity*/
       ctx[15].vaultPath)) {
@@ -42621,7 +42831,11 @@ function instance9($$self, $$props, $$invalidate) {
           plugin.setState(0 /* idle */);
           return false;
         }
+<<<<<<< HEAD
         plugin.promiseQueue.addTask(() => plugin.gitManager.commit({ message: commitMessage }).then(() => {
+=======
+        plugin.promiseQueue.addTask(() => plugin.gitManager.commit(commitMessage).then(() => {
+>>>>>>> ZeldaRev
           if (commitMessage !== plugin.settings.commitMessage) {
             $$invalidate(2, commitMessage = "");
           }
@@ -43118,11 +43332,19 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       id: "add-to-gitignore",
       name: "Add file to gitignore",
       checkCallback: (checking) => {
+<<<<<<< HEAD
         const file = this.app.workspace.getActiveFile();
         if (checking) {
           return file !== null;
         } else {
           this.app.vault.adapter.append(
+=======
+        const file = app.workspace.getActiveFile();
+        if (checking) {
+          return file !== null;
+        } else {
+          app.vault.adapter.append(
+>>>>>>> ZeldaRev
             this.gitManager.getVaultPath(".gitignore"),
             "\n" + this.gitManager.asRepositoryRelativePath(
               file.path,
@@ -43180,6 +43402,7 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         })
       )
     });
+<<<<<<< HEAD
     if (import_obsidian30.Platform.isDesktopApp) {
       this.addCommand({
         id: "commit-amend-staged-specified-message",
@@ -43194,6 +43417,8 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         )
       });
     }
+=======
+>>>>>>> ZeldaRev
     this.addCommand({
       id: "commit-staged-specified-message",
       name: "Commit staged with specific message",
@@ -43291,13 +43516,20 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
         if (!await this.isAllInitialized())
           return;
         const status2 = await this.gitManager.status();
+<<<<<<< HEAD
         console.log(status2);
+=======
+>>>>>>> ZeldaRev
         this.setState(0 /* idle */);
         if (status2.changed.length + status2.staged.length > 500) {
           this.displayError("Too many changes to display");
           return;
         }
+<<<<<<< HEAD
         new ChangedFilesModal(this, status2.all).open();
+=======
+        new ChangedFilesModal(this, status2.changed).open();
+>>>>>>> ZeldaRev
       }
     });
     this.addCommand({
@@ -43392,7 +43624,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     const length = 1e4;
     if (this.manifest.id === "obsidian-git" && import_obsidian30.Platform.isDesktopApp && !this.settings.showedMobileNotice) {
       new import_obsidian30.Notice(
+<<<<<<< HEAD
         "Git is now available on mobile! Please read the plugin's README for more information.",
+=======
+        "Obsidian Git is now available on mobile! Please read the plugin's README for more information.",
+>>>>>>> ZeldaRev
         length
       );
       this.settings.showedMobileNotice = true;
@@ -43400,7 +43636,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     }
     if (this.manifest.id === "obsidian-git-isomorphic") {
       new import_obsidian30.Notice(
+<<<<<<< HEAD
         "Git Mobile is now deprecated. Please uninstall it and install Git instead.",
+=======
+        "Obsidian Git Mobile is now deprecated. Please uninstall it and install Obsidian Git instead.",
+>>>>>>> ZeldaRev
         length
       );
     }
@@ -43739,12 +43979,20 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     fromAutoBackup,
     requestCustomMessage = false,
     onlyStaged = false,
+<<<<<<< HEAD
     commitMessage,
     amend = false
   }) {
     if (!await this.isAllInitialized())
       return false;
     let hadConflict = this.localStorage.getConflict();
+=======
+    commitMessage
+  }) {
+    if (!await this.isAllInitialized())
+      return false;
+    let hadConflict = this.localStorage.getConflict() === "true";
+>>>>>>> ZeldaRev
     let changedFiles;
     let status2;
     let unstagedFiles;
@@ -43752,7 +44000,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       this.mayDeleteConflictFile();
       status2 = await this.updateCachedStatus();
       if (status2.conflicted.length == 0) {
+<<<<<<< HEAD
         this.localStorage.setConflict(false);
+=======
+        this.localStorage.setConflict("false");
+>>>>>>> ZeldaRev
         hadConflict = false;
       }
       if (fromAutoBackup && status2.conflicted.length > 0) {
@@ -43808,21 +44060,33 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       }
       let committedFiles;
       if (onlyStaged) {
+<<<<<<< HEAD
         committedFiles = await this.gitManager.commit({
           message: cmtMessage,
           amend
         });
+=======
+        committedFiles = await this.gitManager.commit(cmtMessage);
+>>>>>>> ZeldaRev
       } else {
         committedFiles = await this.gitManager.commitAll({
           message: cmtMessage,
           status: status2,
+<<<<<<< HEAD
           unstagedFiles,
           amend
+=======
+          unstagedFiles
+>>>>>>> ZeldaRev
         });
       }
       if (this.gitManager instanceof SimpleGit) {
         if ((await this.updateCachedStatus()).conflicted.length == 0) {
+<<<<<<< HEAD
           this.localStorage.setConflict(false);
+=======
+          this.localStorage.setConflict("false");
+>>>>>>> ZeldaRev
         }
       }
       let roughly = false;
@@ -43874,7 +44138,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     if (!await this.remotesAreSet()) {
       return false;
     }
+<<<<<<< HEAD
     const hadConflict = this.localStorage.getConflict();
+=======
+    const hadConflict = this.localStorage.getConflict() === "true";
+>>>>>>> ZeldaRev
     if (this.gitManager instanceof SimpleGit)
       await this.mayDeleteConflictFile();
     let status2;
@@ -43937,8 +44205,12 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
     );
     if (file) {
       this.app.workspace.iterateAllLeaves((leaf) => {
+<<<<<<< HEAD
         var _a2;
         if (leaf.view instanceof import_obsidian30.MarkdownView && ((_a2 = leaf.view.file) == null ? void 0 : _a2.path) == file.path) {
+=======
+        if (leaf.view instanceof import_obsidian30.MarkdownView && leaf.view.file.path == file.path) {
+>>>>>>> ZeldaRev
           leaf.detach();
         }
       });
@@ -44061,7 +44333,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
       }
     }
     if (!this.timeoutIDBackup && !this.onFileModifyEventRef) {
+<<<<<<< HEAD
       const lastAutos = this.loadLastAuto();
+=======
+      const lastAutos = await this.loadLastAuto();
+>>>>>>> ZeldaRev
       if (this.settings.autoSaveInterval > 0) {
         const now2 = /* @__PURE__ */ new Date();
         const diff2 = this.settings.autoSaveInterval - Math.round(
@@ -44073,7 +44349,11 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   }
   async setUpAutos() {
     this.setUpAutoBackup();
+<<<<<<< HEAD
     const lastAutos = this.loadLastAuto();
+=======
+    const lastAutos = await this.loadLastAuto();
+>>>>>>> ZeldaRev
     if (this.settings.differentIntervalCommitAndPush && this.settings.autoPushInterval > 0) {
       const now2 = /* @__PURE__ */ new Date();
       const diff2 = this.settings.autoPushInterval - Math.round(
@@ -44196,12 +44476,20 @@ var ObsidianGit = class extends import_obsidian30.Plugin {
   }
   async handleConflict(conflicted) {
     this.setState(6 /* conflicted */);
+<<<<<<< HEAD
     this.localStorage.setConflict(true);
+=======
+    this.localStorage.setConflict("true");
+>>>>>>> ZeldaRev
     let lines;
     if (conflicted !== void 0) {
       lines = [
         "# Conflicts",
+<<<<<<< HEAD
         "Please resolve them and commit them using the commands `Git: Commit all changes` followed by `Git: Push`",
+=======
+        "Please resolve them and commit them using the commands `Obsidian Git: Commit all changes` followed by `Obsidian Git: Push`",
+>>>>>>> ZeldaRev
         "(This file will automatically be deleted before commit)",
         "[[#Additional Instructions]] available below file list",
         "",
@@ -44268,7 +44556,13 @@ I strongly recommend to use "Source mode" for viewing the conflicted files. For 
     if (remoteName) {
       this.displayMessage("Fetching remote branches");
       await this.gitManager.fetch(remoteName);
+<<<<<<< HEAD
       const branches = await this.gitManager.getRemoteBranches(remoteName);
+=======
+      const branches = await this.gitManager.getRemoteBranches(
+        remoteName
+      );
+>>>>>>> ZeldaRev
       const branchModal = new GeneralModal({
         options: branches,
         placeholder: "Select or create a new remote branch by typing its name and selecting it"
@@ -44338,9 +44632,13 @@ I strongly recommend to use "Source mode" for viewing the conflicted files. For 
     var _a2;
     (_a2 = this.statusBar) == null ? void 0 : _a2.displayMessage(message.toLowerCase(), timeout);
     if (!this.settings.disablePopups) {
+<<<<<<< HEAD
       if (!this.settings.disablePopupsForNoChanges || !message.startsWith("No changes")) {
         new import_obsidian30.Notice(message, 5 * 1e3);
       }
+=======
+      new import_obsidian30.Notice(message, 5 * 1e3);
+>>>>>>> ZeldaRev
     }
     console.log(`git obsidian message: ${message}`);
   }

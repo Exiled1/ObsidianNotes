@@ -8,12 +8,20 @@
   "disablePush": false,
   "pullBeforePush": true,
   "disablePopups": false,
+<<<<<<< HEAD
   "listChangedFilesInMessageBody": true,
+=======
+  "listChangedFilesInMessageBody": false,
+>>>>>>> ZeldaRev
   "showStatusBar": true,
   "updateSubmodules": false,
   "syncMethod": "merge",
   "customMessageOnAutoBackup": false,
+<<<<<<< HEAD
   "autoBackupAfterFileChange": true,
+=======
+  "autoBackupAfterFileChange": false,
+>>>>>>> ZeldaRev
   "treeStructure": false,
   "refreshSourceControl": true,
   "basePath": "",
@@ -47,9 +55,13 @@
     },
     "textColorCss": "var(--text-muted)",
     "ignoreWhitespace": false,
+<<<<<<< HEAD
     "gutterSpacingFallbackLength": 5,
     "lastShownAuthorDisplay": "initials",
     "lastShownDateTimeFormatOptions": "date"
+=======
+    "gutterSpacingFallbackLength": 5
+>>>>>>> ZeldaRev
   },
   "autoCommitMessage": "vault backup: {{date}}"
 }

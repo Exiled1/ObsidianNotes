@@ -4,12 +4,19 @@
   "ignoreDiacritics": true,
   "indexedFileTypes": [],
   "PDFIndexing": false,
+<<<<<<< HEAD
   "officeIndexing": false,
+=======
+>>>>>>> ZeldaRev
   "imagesIndexing": false,
   "unsupportedFilesIndexing": "no",
   "splitCamelCase": false,
   "openInNewPane": false,
+<<<<<<< HEAD
   "vimLikeNavigationShortcut": false,
+=======
+  "vimLikeNavigationShortcut": true,
+>>>>>>> ZeldaRev
   "ribbonIcon": true,
   "showExcerpt": true,
   "renderLineReturnInExcerpts": true,
@@ -27,6 +34,10 @@
   "httpApiEnabled": false,
   "httpApiPort": "51361",
   "httpApiNotice": true,
+<<<<<<< HEAD
   "welcomeMessage": "1.21.0",
+=======
+  "welcomeMessage": "1.10.1",
+>>>>>>> ZeldaRev
   "verboseLogging": false
 }
