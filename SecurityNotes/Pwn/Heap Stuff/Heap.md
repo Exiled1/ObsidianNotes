@@ -5,8 +5,8 @@
 So this index is to help me keep track of everything I've learned. As well as link to challenges, writeups, and pretty much anything I've learned while doing heap exploitation.
 
 ## Note links
-- Learning about the heap and its internals: [[Heap learning]]
-- Note's on exploiting the heap: [[Heap Exploitation]]
+- Learning about the heap and its internals: Heap learning
+- Note's on exploiting the heap: Heap Exploitation
 - Heap exploitation and demonstrations of different attacks: [Link](https://heap-exploitation.dhavalkapil.com/)
 - more chals [link](https://exploit.education/protostar/) 
 
