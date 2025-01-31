@@ -1,14 +1,12 @@
 SecurityNotes/.obsidian/
 
+.obsidian/workspace.json
+.obsidian/*
+.obsidian/
+
 # Ignore Smart Connections folder
 .smart-connections
 .obsidian/plugins/smart-connections/data.json
 .obsidian/plugins/smart-connections
 .obsidian/plugins/quickadd
 
-
-# Ignore Smart Connections folder
-.smart-connections
-
-.obsidian/*
-.obsidian/
