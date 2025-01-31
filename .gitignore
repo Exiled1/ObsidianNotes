@@ -9,3 +9,6 @@ SecurityNotes/.obsidian/
 
 # Ignore Smart Connections folder
 .smart-connections
+
+.obsidian/*
+.obsidian/
