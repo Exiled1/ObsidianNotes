@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "afdab36af5268ded",
+        "id": "433f73de93940c44",
         "type": "tabs",
         "children": [
           {
-            "id": "2439779f29295f6c",
+            "id": "ba8533378661353b",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "SecurityNotes/CertificationStudy/Windows Active Directory.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "SecurityNotes/CertificationStudy/Windows Active Directory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "SecurityNotes/CertificationStudy/Windows Active Directory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "SecurityNotes/CertificationStudy/Windows Active Directory.md"
+              }
             }
           },
           {
@@ -154,7 +163,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -174,10 +183,31 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "58a2a19d4d4f9168",
+  "active": "ba8533378661353b",
   "lastOpenFiles": [
-    "BinaryNinjaNotes/Binary Ninja/Types Module.md",
+    "SecurityNotes/Tooling/mkvirtualenv.md",
+    "SecurityNotes/CertificationStudy/Windows Active Directory.md",
+    "SecurityNotes/SecurityNotes.md",
+    "SecurityNotes/Pwn/Windows Pwn/Windows Calling convention.md",
+    "SecurityNotes/CertificationStudy",
+    "SecurityNotes/Pwn/Pwn.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/First Fit.md",
+    "SecurityNotes/Pwn/Windows Pwn",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap.md",
+    "SecurityNotes/Pwn/libc_notes/libc_notes.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/TCache Explanation and attacks.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Fast Bin.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap security checks.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap learning.md",
+    "SecurityNotes/Reversing/Binary Ninja.md",
+    "SecurityNotes/Reversing/Reversing.md",
     "SecurityNotes/Index.md",
+    "SecurityNotes/Reversing/Rev tips and tricks.md",
+    "SecurityNotes/Reversing/Redressing a stripped libc.md",
+    "SecurityNotes/Reversing/Ghidra.md",
+    "BinaryNinjaNotes/Binary Ninja/Types Module.md",
     "SecurityNotes/Pwn/Heap Stuff/Heap Exploitation.md",
     "BinaryNinjaNotes/Binary Ninja",
     "BinaryNinjaNotes",
@@ -185,26 +215,7 @@
     "Types Module.md",
     "SecurityNotes/Pwn/libc_notes/libc 2.33.md",
     "SecurityNotes/writeups/writeups.md",
-    "SecurityNotes/Tooling/Tooling.md",
-    "SecurityNotes/Reversing/Reversing.md",
-    "SecurityNotes/Random Stuff/Random Stuff.md",
-    "SecurityNotes/Pwn/libc_notes/libc_notes.md",
-    "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
-    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
-    "SecurityNotes/Pwn/Heap Stuff/Heap Stuff.md",
-    "SecurityNotes/Pwn/Exploit tooling/Exploit tooling.md",
-    "SecurityNotes/Pwn/Pwn.md",
-    "SecurityNotes/Forensics/Forensics.md",
-    "SecurityNotes/Crypto/Crypto.md",
-    "SecurityNotes/SecurityNotes.md",
-    "SecurityNotes/Reversing/Rev tips and tricks.md",
-    "SecurityNotes/Reversing/Redressing a stripped libc.md",
-    "SecurityNotes/Crypto/Crypto Learning Stuff.md",
     "SecurityNotes/Crypto",
-    "SecurityNotes/Crypto Learning Stuff.md",
-    "SecurityNotes/Reversing/Ghidra.md",
-    "SecurityNotes/Reversing/Binary Ninja.md",
-    "SecurityNotes/Pwn/Heap Stuff/Heap.md",
     "Index Loom.loom"
   ]
 }

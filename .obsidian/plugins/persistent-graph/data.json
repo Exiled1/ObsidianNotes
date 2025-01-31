@@ -1,4 +1,220 @@
 {
-  "nodePositions": [],
+  "nodePositions": [
+    {
+      "id": "BinaryNinjaNotes/Binary Ninja/Types Module.md",
+      "x": 322.8956298828125,
+      "y": 794.2493286132812
+    },
+    {
+      "id": "RandomNotes/RandomNotes/Good guitar songs to learn.md",
+      "x": 596.9537353515625,
+      "y": 618.0762939453125
+    },
+    {
+      "id": "SecurityNotes/Crypto/Crypto Learning Stuff.md",
+      "x": -670.4522705078125,
+      "y": -260.4656982421875
+    },
+    {
+      "id": "SecurityNotes/Crypto/Crypto.md",
+      "x": -419.7520751953125,
+      "y": -239.3868408203125
+    },
+    {
+      "id": "SecurityNotes/Forensics/Forensic specific tools.md",
+      "x": -395.13037109375,
+      "y": -697.5657348632812
+    },
+    {
+      "id": "SecurityNotes/Forensics/Forensics.md",
+      "x": -238.72836303710938,
+      "y": -526.9491577148438
+    },
+    {
+      "id": "SecurityNotes/Index.md",
+      "x": 185.06930541992188,
+      "y": -222.93861389160156
+    },
+    {
+      "id": "SecurityNotes/Pwn/Exploit tooling/Exploit tooling.md",
+      "x": 79.66666412353516,
+      "y": 320.5804138183594
+    },
+    {
+      "id": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md",
+      "x": 451.3980712890625,
+      "y": 289.5016174316406
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Exploitation.md",
+      "x": -246.0047149658203,
+      "y": 198.7811279296875
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Fast Bin.md",
+      "x": 309.40960693359375,
+      "y": -626.6021118164062
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
+      "x": 359.0353698730469,
+      "y": -321.0615234375
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Internals/TCache Explanation and attacks.md",
+      "x": 477.63348388671875,
+      "y": -548.2109375
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Stuff.md",
+      "x": 217.29776000976562,
+      "y": -11.064041137695312
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/First Fit.md",
+      "x": -363.56353759765625,
+      "y": 5.039755344390869
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
+      "x": -126.93275451660156,
+      "y": -34.89826583862305
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap learning.md",
+      "x": 176.42799377441406,
+      "y": -407.1558532714844
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap security checks.md",
+      "x": 269.4158020019531,
+      "y": 418.7478332519531
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/Heap.md",
+      "x": 128.9210205078125,
+      "y": 571.4124145507812
+    },
+    {
+      "id": "SecurityNotes/Pwn/Heap Stuff/High Level Heap exploitation Overview.md",
+      "x": -124.67897033691406,
+      "y": 330.10546875
+    },
+    {
+      "id": "SecurityNotes/Pwn/Pwn.md",
+      "x": 59.43196487426758,
+      "y": 114.75271606445312
+    },
+    {
+      "id": "SecurityNotes/Pwn/Stack Exploitation.md",
+      "x": 264.4217224121094,
+      "y": 180.342529296875
+    },
+    {
+      "id": "SecurityNotes/Pwn/libc_notes/libc 2.33.md",
+      "x": -288.0484924316406,
+      "y": 758.7124633789062
+    },
+    {
+      "id": "SecurityNotes/Pwn/libc_notes/libc and their quirks.md",
+      "x": -32.01583480834961,
+      "y": 799.6004638671875
+    },
+    {
+      "id": "SecurityNotes/Pwn/libc_notes/libc_notes.md",
+      "x": -111.81285095214844,
+      "y": 555.1696166992188
+    },
+    {
+      "id": "SecurityNotes/Random Stuff/Random CPython.md",
+      "x": -623.4312744140625,
+      "y": -506.1087646484375
+    },
+    {
+      "id": "SecurityNotes/Random Stuff/Random Stuff.md",
+      "x": -407.32080078125,
+      "y": -420.9505920410156
+    },
+    {
+      "id": "SecurityNotes/Reversing/Binary Ninja.md",
+      "x": 797.8464965820312,
+      "y": 48.367557525634766
+    },
+    {
+      "id": "SecurityNotes/Reversing/Ghidra.md",
+      "x": 778.099365234375,
+      "y": -106.74336242675781
+    },
+    {
+      "id": "SecurityNotes/Reversing/Notes on reversing random architectures.md",
+      "x": 601.7398071289062,
+      "y": 87.97293090820312
+    },
+    {
+      "id": "SecurityNotes/Reversing/Redressing a stripped libc.md",
+      "x": 672.5773315429688,
+      "y": -343.07147216796875
+    },
+    {
+      "id": "SecurityNotes/Reversing/Rev tips and tricks.md",
+      "x": 742.2308959960938,
+      "y": 252.24551391601562
+    },
+    {
+      "id": "SecurityNotes/Reversing/Reversing.md",
+      "x": 531.6036376953125,
+      "y": -147.19273376464844
+    },
+    {
+      "id": "SecurityNotes/SecurityNotes.md",
+      "x": -119.59333801269531,
+      "y": -283.6663818359375
+    },
+    {
+      "id": "SecurityNotes/Tooling/Installing angr.md",
+      "x": -118.56377410888672,
+      "y": -830.919189453125
+    },
+    {
+      "id": "SecurityNotes/Tooling/Tooling.md",
+      "x": -34.262332916259766,
+      "y": -616.1207275390625
+    },
+    {
+      "id": "SecurityNotes/Tooling/mkvirtualenv.md",
+      "x": 104.02304077148438,
+      "y": -820.6707763671875
+    },
+    {
+      "id": "SecurityNotes/writeups/Pwnabletw/Applestore Notes.md",
+      "x": -769.3832397460938,
+      "y": 119.32264709472656
+    },
+    {
+      "id": "SecurityNotes/writeups/Pwnabletw/Pwnabletw.md",
+      "x": -642.9950561523438,
+      "y": 13.945676803588867
+    },
+    {
+      "id": "SecurityNotes/writeups/Pwnabletw/Tcache Tear.md",
+      "x": -588.209228515625,
+      "y": 424.8476867675781
+    },
+    {
+      "id": "SecurityNotes/writeups/VolgaCTF2022/VolgaCTF2022.md",
+      "x": -740.3841552734375,
+      "y": 313.6264343261719
+    },
+    {
+      "id": "SecurityNotes/writeups/VolgaCTF2022/habyheap writeup.md",
+      "x": -453.0095520019531,
+      "y": 562.1539916992188
+    },
+    {
+      "id": "SecurityNotes/writeups/writeups.md",
+      "x": -524.781494140625,
+      "y": 213.87030029296875
+    }
+  ],
   "automaticallyRestoreNodePositions": true
 }

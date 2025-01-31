@@ -4,6 +4,8 @@
 type: folder_brief_live
 ```
 %% Begin Waypoint %%
+- **CertificationStudy**
+	- [[Windows Active Directory]]
 - **[[Crypto]]**
 - **[[Forensics]]**
 - [[Index]]

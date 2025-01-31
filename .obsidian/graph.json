@@ -11,7 +11,7 @@
       "query": "",
       "color": {
         "a": 1,
-        "rgb": 16777215
+        "rgb": 14701138
       }
     }
   ],
@@ -21,10 +21,10 @@
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.53757332510034,
-  "repelStrength": 13.2016054337759,
-  "linkStrength": 0.679839456622414,
-  "linkDistance": 155,
-  "scale": 0.5695894659488034,
-  "close": true
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.2902662019598692,
+  "close": false
 }
