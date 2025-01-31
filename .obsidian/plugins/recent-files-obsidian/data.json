@@ -1,0 +1,199 @@
+{
+  "recentFiles": [
+    {
+      "basename": "mkvirtualenv",
+      "path": "SecurityNotes/Tooling/mkvirtualenv.md"
+    },
+    {
+      "basename": "SecurityNotes",
+      "path": "SecurityNotes/SecurityNotes.md"
+    },
+    {
+      "basename": "Pwn",
+      "path": "SecurityNotes/Pwn/Pwn.md"
+    },
+    {
+      "basename": "First Fit",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/First Fit.md"
+    },
+    {
+      "basename": "Heap Techniques",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md"
+    },
+    {
+      "basename": "Heap",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap.md"
+    },
+    {
+      "basename": "libc_notes",
+      "path": "SecurityNotes/Pwn/libc_notes/libc_notes.md"
+    },
+    {
+      "basename": "TCache Explanation and attacks",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Internals/TCache Explanation and attacks.md"
+    },
+    {
+      "basename": "Fast Bin",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Fast Bin.md"
+    },
+    {
+      "basename": "Heap security checks",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap security checks.md"
+    },
+    {
+      "basename": "Heap Internals",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Heap Internals.md"
+    },
+    {
+      "basename": "Heap learning",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap learning.md"
+    },
+    {
+      "basename": "Binary Ninja",
+      "path": "SecurityNotes/Reversing/Binary Ninja.md"
+    },
+    {
+      "basename": "Reversing",
+      "path": "SecurityNotes/Reversing/Reversing.md"
+    },
+    {
+      "basename": "Index",
+      "path": "SecurityNotes/Index.md"
+    },
+    {
+      "basename": "Rev tips and tricks",
+      "path": "SecurityNotes/Reversing/Rev tips and tricks.md"
+    },
+    {
+      "basename": "Redressing a stripped libc",
+      "path": "SecurityNotes/Reversing/Redressing a stripped libc.md"
+    },
+    {
+      "basename": "Ghidra",
+      "path": "SecurityNotes/Reversing/Ghidra.md"
+    },
+    {
+      "basename": "Types Module",
+      "path": "BinaryNinjaNotes/Binary Ninja/Types Module.md"
+    },
+    {
+      "basename": "Heap Exploitation",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Exploitation.md"
+    },
+    {
+      "basename": "libc 2.33",
+      "path": "SecurityNotes/Pwn/libc_notes/libc 2.33.md"
+    },
+    {
+      "basename": "writeups",
+      "path": "SecurityNotes/writeups/writeups.md"
+    },
+    {
+      "basename": "Tooling",
+      "path": "SecurityNotes/Tooling/Tooling.md"
+    },
+    {
+      "basename": "Random Stuff",
+      "path": "SecurityNotes/Random Stuff/Random Stuff.md"
+    },
+    {
+      "basename": "Heap Stuff",
+      "path": "SecurityNotes/Pwn/Heap Stuff/Heap Stuff.md"
+    },
+    {
+      "basename": "Exploit tooling",
+      "path": "SecurityNotes/Pwn/Exploit tooling/Exploit tooling.md"
+    },
+    {
+      "basename": "Forensics",
+      "path": "SecurityNotes/Forensics/Forensics.md"
+    },
+    {
+      "basename": "Crypto",
+      "path": "SecurityNotes/Crypto/Crypto.md"
+    },
+    {
+      "basename": "Pwndbg and Pwntools",
+      "path": "SecurityNotes/Pwn/Exploit tooling/Pwndbg and Pwntools.md"
+    },
+    {
+      "basename": "Forensic specific tools",
+      "path": "SecurityNotes/Forensics/Forensic specific tools.md"
+    },
+    {
+      "basename": "Index",
+      "path": "Index.md"
+    },
+    {
+      "basename": "Pwn",
+      "path": "Pwn/Pwn.md"
+    },
+    {
+      "basename": "Exploit tooling",
+      "path": "Pwn/Exploit tooling/Exploit tooling.md"
+    },
+    {
+      "basename": "Heap Stuff",
+      "path": "Pwn/Heap Stuff/Heap Stuff.md"
+    },
+    {
+      "basename": "Crypto Learning Stuff",
+      "path": "Crypto Learning Stuff.md"
+    },
+    {
+      "basename": "writeups",
+      "path": "writeups/writeups.md"
+    },
+    {
+      "basename": "VolgaCTF2022",
+      "path": "writeups/VolgaCTF2022/VolgaCTF2022.md"
+    },
+    {
+      "basename": "Pwnabletw",
+      "path": "writeups/Pwnabletw/Pwnabletw.md"
+    },
+    {
+      "basename": "Tooling",
+      "path": "Tooling/Tooling.md"
+    },
+    {
+      "basename": "Reversing",
+      "path": "Reversing/Reversing.md"
+    },
+    {
+      "basename": "Random Stuff",
+      "path": "Random Stuff/Random Stuff.md"
+    },
+    {
+      "basename": "libc_notes",
+      "path": "Pwn/libc_notes/libc_notes.md"
+    },
+    {
+      "basename": "Heap Techniques",
+      "path": "Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md"
+    },
+    {
+      "basename": "Heap Internals",
+      "path": "Pwn/Heap Stuff/Heap Internals/Heap Internals.md"
+    },
+    {
+      "basename": "Heap Exploitation",
+      "path": "Pwn/Heap Stuff/Heap Exploitation.md"
+    },
+    {
+      "basename": "First Fit",
+      "path": "Pwn/Heap Stuff/Heap Techniques/First Fit.md"
+    },
+    {
+      "basename": "Heap learning",
+      "path": "Pwn/Heap Stuff/Heap learning.md"
+    },
+    {
+      "basename": "Forensics",
+      "path": "Forensics/Forensics.md"
+    }
+  ],
+  "omittedPaths": [],
+  "maxLength": null,
+  "openType": "tab"
+}

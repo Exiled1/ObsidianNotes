@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "ffd59e41aa008a3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "433f73de93940c44",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ba8533378661353b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "SecurityNotes/Tooling/mkvirtualenv.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "45f74417aa71d6fc",
+    "type": "split",
+    "children": [
+      {
+        "id": "3dd944aa70942a3a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "58a2a19d4d4f9168",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3ef8aa51536e5649",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3a394cd4f72f4069",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "a5e0c21c1ccbc886",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6b04088667c1621e",
+    "type": "split",
+    "children": [
+      {
+        "id": "7ea48ea140a0d7ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cc3f5ff1a502057f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "SecurityNotes/Tooling/mkvirtualenv.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "95cc566cef6251a9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "SecurityNotes/Tooling/mkvirtualenv.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "035aff2658c06e61",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "528c71ca4d61c857",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "SecurityNotes/Tooling/mkvirtualenv.md"
+              }
+            }
+          },
+          {
+            "id": "ab2052ad43069be0",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "8e5cd17aa8b046e6",
+            "type": "leaf",
+            "state": {
+              "type": "graph-analysis",
+              "state": {}
+            }
+          },
+          {
+            "id": "0b4f69f3859f9d23",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "graph:Open graph view": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "omnisearch:Omnisearch": false,
+      "notion-like-tables:Create loom": false
+    }
+  },
+  "active": "ba8533378661353b",
+  "lastOpenFiles": [
+    "SecurityNotes/CertificationStudy/Windows Active Directory.md",
+    "SecurityNotes/Tooling/mkvirtualenv.md",
+    "SecurityNotes/SecurityNotes.md",
+    "SecurityNotes/Pwn/Windows Pwn/Windows Calling convention.md",
+    "SecurityNotes/CertificationStudy",
+    "SecurityNotes/Pwn/Pwn.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/First Fit.md",
+    "SecurityNotes/Pwn/Windows Pwn",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Techniques/Heap Techniques.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap.md",
+    "SecurityNotes/Pwn/libc_notes/libc_notes.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/TCache Explanation and attacks.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Fast Bin.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap security checks.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Internals/Heap Internals.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap learning.md",
+    "SecurityNotes/Reversing/Binary Ninja.md",
+    "SecurityNotes/Reversing/Reversing.md",
+    "SecurityNotes/Index.md",
+    "SecurityNotes/Reversing/Rev tips and tricks.md",
+    "SecurityNotes/Reversing/Redressing a stripped libc.md",
+    "SecurityNotes/Reversing/Ghidra.md",
+    "BinaryNinjaNotes/Binary Ninja/Types Module.md",
+    "SecurityNotes/Pwn/Heap Stuff/Heap Exploitation.md",
+    "BinaryNinjaNotes/Binary Ninja",
+    "BinaryNinjaNotes",
+    "BinaryNinjaNotes/Types Module.md",
+    "Types Module.md",
+    "SecurityNotes/Pwn/libc_notes/libc 2.33.md",
+    "SecurityNotes/writeups/writeups.md",
+    "SecurityNotes/Crypto",
+    "Index Loom.loom"
+  ]
+}

@@ -1,6 +1,7 @@
 SecurityNotes/.obsidian/
 
 .obsidian/workspace.json
+.obsidian/*
 
 # Ignore Smart Connections folder
 .smart-connections
